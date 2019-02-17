@@ -1,0 +1,200 @@
+:root {
+    --primaryColour: rgb(32, 32, 32);
+    --secondaryColour: rgb(65, 65, 65);
+    --thirdColour: rgb(0, 161, 0);
+    --fourthColour: rgb(26, 226, 0);
+    --fifthColour: rgb(255, 255, 51);
+    --sixthColour: rgb(255, 255, 204);
+    --seventhColour: rgb(255,255,255);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+/*************************************************************************
+*
+* Sekcja Marcina
+*
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+
+/*  POCZATEK SEKCJI BURGERA */
+#burger-container{
+    position: relative;
+    width: 100px;
+}
+
+#burger{
+    cursor: pointer;
+    display: block;
+}
+
+#burger span{
+    background: #eee;
+    display: block;
+    width: 50px;
+    height: 7px;
+    margin-bottom: 5px;
+    position: relative;
+    top: 0;
+    transition: all ease-in-out 0.4s;
+}
+
+#burger-container.open span:nth-child(2),
+#burger-container.open span:nth-child(3) {
+    width: 0;
+    opacity: 0;
+}
+
+#burger-container.open span:nth-child(4) {
+    transform: rotate(45deg);
+    top: -18px;
+}
+
+#burger-container.open span:nth-child(1) {
+    transform: rotate(-45deg);
+    top: 18px;
+}
+
+input#menu {
+    display: none;
+}
+/*  KONIEC SEKCJI BURGERA */
+
+@media only screen and (max-width: 600px) {
+.menu-content {
+    max-height: 0;
+    overflow: hidden;
+    width: 130px;
+}
+.dropdown-menu {
+    position: fixed;
+    padding: 20px;
+    width: 180px;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.4);
+    color: black;
+    font-style: italic;
+}
+.menu-content li:hover {
+    background: rgb(148, 0, 0);
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid;
+}
+
+.menu-content li:nth-child(4) {
+    border-bottom: none;
+}
+
+.dropdown-menu label {
+    display: block;
+    cursor: pointer;
+
+}
+
+
+
+input:checked ~ .menu-content {
+    max-height: 50%;
+}
+}
+/* END MAX WIDTH 600px */
+
+
+
+
+
+@media only screen and (min-width: 601px) {
+
+#burger-container {
+    display: none;
+}
+
+.menu-content {
+    background: rgba(255, 255, 255, 0.4);
+    width: 100%;
+    position: fixed;
+}
+
+.menu-content li:hover {
+    background: rgb(148, 0, 0);
+}
+
+.menu-content a {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    padding: 10px;
+    color: black;
+}
+
+.menu-content ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+
+
+}
+
+.menu-content li {
+   flex: 1 1 0;
+}
+}
+/*  END MIN WIDTH 601px */
+
+/*************************************************************************
+*
+* Sekcja Hero
+*
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+.hero {
+    width: 100%;
+    text-align: center;
+}
+
+.hero__image {
+    width: 100vw;
+    height: 30%;
+    background-image: url("photos/background.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+
+
+
+/*************************************************************************
+*
+* Sekcja Pauliny
+*
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+
+
+
+
+
+/*************************************************************************
+*
+* Sekcja Piotrka
+*
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+
