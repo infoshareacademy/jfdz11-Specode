@@ -1,6 +1,6 @@
 :root {
     --primaryColour: rgb(32, 32, 32);
-    --secondaryColour: rgb(65, 65, 65);
+    --secondaryColour: rgb(53, 53, 53);
     --thirdColour: rgb(0, 161, 0);
     --fourthColour: rgb(26, 226, 0);
     --fifthColour: rgb(255, 255, 51);
@@ -33,6 +33,9 @@ body {
 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
 
 /*  POCZATEK SEKCJI BURGERA */
+
+@media only screen and (max-width: 568px) {
+
 #burger-container{
     position: relative;
     width: 100px;
@@ -75,16 +78,16 @@ input#menu {
 }
 /*  KONIEC SEKCJI BURGERA */
 
-@media only screen and (max-width: 568px) {
+
 .menu-content {
     max-height: 0;
     overflow: hidden;
     width: 130px;
 }
 .dropdown-menu {
-    position: fixed;
+    position: absolute;
     padding: 20px;
-    width: 180px;
+    width: 100px;
 }
 
 .menu-content li a:hover {
@@ -95,7 +98,7 @@ input#menu {
     padding: 10px;
     text-decoration: none;
     background-color: var(--secondaryColour);
-    color: black;
+    color: whitesmoke;
     font-style: italic;
 }
 
@@ -119,6 +122,27 @@ input#menu {
 input:checked ~ .menu-content {
     max-height: 50%;
 }
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 20px; /* Place the button 30px from the right */
+    z-index: 1; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: var(--secondaryColour); /* Set a background color */
+    color: whitesmoke; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  #myBtn:hover {
+    background-color: var(--thirdColour); /* Add a dark-grey background on hover */
+  }
+  
 }
 
 /* END MAX WIDTH 600px */
@@ -148,7 +172,7 @@ input:checked ~ .menu-content {
     display: block;
     padding: 10px;
     color: whitesmoke;
-    background-color: var(--primaryColour);
+    background-color: var(--secondaryColour);
     height: 3rem;
 }
 
@@ -168,6 +192,10 @@ input:checked ~ .menu-content {
     justify-content: center;
     align-items: center;
     font-weight: bold;
+}
+
+#menu{
+    display:none;
 }
 }
 /*  END MIN WIDTH 601px */
