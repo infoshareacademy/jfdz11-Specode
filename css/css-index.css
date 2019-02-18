@@ -230,48 +230,72 @@ input:checked ~ .menu-content {
 
 
 
-/*************************************************************************
-* About Us section start
+/*
+    About Us section start
 */
 
-/* For mobile section starty
+/* 
+    For mobile section start
 */
 .row {
     width: 100%;
     display: flex;
     flex-direction: column;
     min-height: 200px;
-    padding: 3%;
+    font-family: Roboto, Lato;
+}
+.about_us_header {
+    color: white;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
+    background: url(/photos/about_us_header_bg2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .about_us {
     background-image: url('photos/about_background.jpg');
-    background-color:red;
+    background-color: white;
     opacity: 1;
-    display:flex;
-    font-family: Lato;
+    align-items: center;
+    font-size: 1.2rem;
+}
 
-}
-.about_me {
-    background: #FFF;
-    border: solid 2px black;
-    min-width: 320px;
-    max-width: 90%;
-   /* height: 366px; */
-    padding: 5%;
-    justify-content: center;
-}
 .about_us img {
     border-radius: 50%;
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    margin:
 }
+.img_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text_box {
+    margin-top: 10%;
+}
+
+.about_me {
+    background: #FFF;
+    box-shadow: 0 0.9375rem 3.75rem rgba(2,2,22,0.1);
+    width: 90%;
+   /* height: 366px; */
+    padding: 7.5%;
+    margin: 3rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
 .about_text {
     display: none;
 }
-/*For mobile section end
+/*
+    For mobile section end
 */
 
 
-/*************************************************************************
-* About Us section end
+/*
+    About Us section end
 */
