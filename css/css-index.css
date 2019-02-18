@@ -234,13 +234,19 @@ input:checked ~ .menu-content {
     About Us section start
 */
 
-/* 
-    For mobile section start
-*/
+@media only screen and (max-width: 568px) {
+    .about_us {
+        flex-direction: column;
+}
+}
+@media only screen and (min-width: 568px) {
+    .about_us {
+        flex-direction: row;
+}
+}
 .row {
     width: 100%;
     display: flex;
-    flex-direction: column;
     min-height: 200px;
     font-family: Roboto, Lato;
 }
@@ -256,7 +262,6 @@ input:checked ~ .menu-content {
 .about_us {
     background-image: url('photos/about_background.jpg');
     background-color: white;
-    opacity: 1;
     align-items: center;
     font-size: 1.2rem;
 }
@@ -265,7 +270,6 @@ input:checked ~ .menu-content {
     border-radius: 50%;
     width: 100%;
     height: auto;
-    margin:
 }
 .img_box {
     display: flex;
@@ -283,7 +287,7 @@ input:checked ~ .menu-content {
     width: 90%;
    /* height: 366px; */
     padding: 7.5%;
-    margin: 3rem 0 0 0;
+    margin: 2rem 0 1rem 0;
     display: flex;
     flex-direction: column;
 }
@@ -291,11 +295,22 @@ input:checked ~ .menu-content {
 .about_text {
     display: none;
 }
-/*
-    For mobile section end
-*/
-
 
 /*
     About Us section end
+*/
+/*
+    Footer section start
+*/
+.footer {
+    width: 100%;
+    min-height: 5rem;
+    background: rgb(32, 32, 32);
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+/*
+   Footer section end
 */
