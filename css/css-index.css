@@ -12,6 +12,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-size: 16px;
 }
 
 html {
@@ -157,6 +158,7 @@ input:checked ~ .menu-content {
 .menu-content {
     width: 100%;
     position: fixed;
+    z-index: 1;
 }
 
 .menu-content li a:hover {
@@ -199,48 +201,88 @@ input:checked ~ .menu-content {
 
 /* FUNCTIONS */
 
-.functions div {
+.functions{
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.diet{
-    height: 5rem;
+.functions div {
+    position: relative;
+    display: flex;
+    min-height: 6rem;
     align-items: center;
-    border: 1px solid blue;
+    border: 1px solid var(--secondaryColour);
     border-radius: 25px;
     width: 80%;
-    margin-top: 1rem;
-    margin-left: 1rem;
-    
+    margin: 0.5rem;
+    min-width: 300px;
+    max-width: 60%;
 }
-.diet img{
+
+.functions div img{
+    margin-left: 0.5rem;
     height: 2rem;
 }
 
-.shop{
-    height: 5rem;
-    align-items: center;
-}
-.shop img{
-    height: 3rem;
+.functions div p{
+    
 }
 
-.training{
-    height: 5rem;
-    align-items: center;
-}
-.training img{
-    height: 3rem;
-}
+/* START SHOW AND HIDE FUNCTION IN OUR FUNCTIONS */
 
-.measurement{
-    height: 5rem;
-    align-items: center;
-}
-.measurement img{
-    height: 3rem;
-}
+.read-more-state {
+    display: none;
+  }
 
+  .read-more-wrap{
+      position: relative;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+  }
+
+  .read-more-wrap li{
+      padding: 0.3rem;
+      align-items: center;
+      justify-content: flex-start;
+  }
+  
+  .read-more-target {
+    opacity: 0;
+    max-height: 0;
+    font-size: 0;
+    transition: .25s ease;
+  }
+  
+  .read-more-state:checked ~ .read-more-wrap .read-more-target {
+    opacity: 1;
+    font-size: inherit;
+    max-height: 999em;
+  }
+  
+  .read-more-state ~ .read-more-trigger:before {
+    content: 'Show more';
+  }
+  
+  .read-more-state:checked ~ .read-more-trigger:before {
+    content: 'Show less';
+  }
+  
+  .read-more-trigger {
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.3em;
+    color: var(--primaryColour);
+    border: 1px solid var(--secondaryColour);
+    border-radius: .25em;
+    background-color: var(--sixthColour);
+  }
+  
+/* END SHOW AND HIDE FUNCTION IN OUR FUNCTIONS */
 
 /*************************************************************************
 *
