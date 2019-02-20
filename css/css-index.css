@@ -77,13 +77,12 @@ input#menu {
     display: none;
 }
 /*  KONIEC SEKCJI BURGERA */
-
-
 .menu-content {
     max-height: 0;
     overflow: hidden;
     width: 130px;
 }
+
 .dropdown-menu {
     position: absolute;
     padding: 20px;
@@ -93,6 +92,7 @@ input#menu {
 .menu-content li a:hover {
     background-color: var(--thirdColour);
 }
+
 .dropdown-menu a {
     display: block;
     padding: 10px;
@@ -101,7 +101,6 @@ input#menu {
     color: whitesmoke;
     font-style: italic;
 }
-
 
 .dropdown-menu li {
     border-bottom: 1px solid;
@@ -116,8 +115,6 @@ input#menu {
     cursor: pointer;
 
 }
-
-
 
 input:checked ~ .menu-content {
     max-height: 50%;
@@ -205,32 +202,20 @@ input:checked ~ .menu-content {
 * Sekcja Hero
 *
 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
-.hero {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    background-image: url("../photos/background.jpg");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.hero__text {
-    padding: 2.5%;
-    border: 1px solid black;
-    background-color: rgba(26, 226, 0, 0.2)
-}
+
 
 /*************************************************************************
 *
-* Sekcja Pauliny
+* Sekcja Main
 *
 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
 
 
-
+/*************************************************************************
+*
+* Sekcja Form
+*
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
 
 
 /*************************************************************************
