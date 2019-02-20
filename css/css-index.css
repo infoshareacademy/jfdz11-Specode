@@ -181,15 +181,18 @@ input:checked ~ .menu-content {
     width: 100%;
     height: 100%;
     text-align: center;
-}
-
-.hero__image {
-    max-width: 100%;
-    height: 100vh;
     background-image: url("../photos/background.jpg");
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero__text {
+    padding: 2.5%;
+    border: 1px solid black;
+    background-color: rgba(26, 226, 0, 0.2)
 }
 
 /*************************************************************************
