@@ -200,6 +200,51 @@ input:checked ~ .menu-content {
 }
 /*  END MIN WIDTH 601px */
 
+/* FUNCTIONS */
+
+.functions div {
+    display: flex;
+}
+
+.diet{
+    height: 5rem;
+    align-items: center;
+    border: 1px solid blue;
+    border-radius: 25px;
+    width: 80%;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    
+}
+.diet img{
+    height: 2rem;
+}
+
+.shop{
+    height: 5rem;
+    align-items: center;
+}
+.shop img{
+    height: 3rem;
+}
+
+.training{
+    height: 5rem;
+    align-items: center;
+}
+.training img{
+    height: 3rem;
+}
+
+.measurement{
+    height: 5rem;
+    align-items: center;
+}
+.measurement img{
+    height: 3rem;
+}
+
+
 /*************************************************************************
 *
 * Sekcja Hero
