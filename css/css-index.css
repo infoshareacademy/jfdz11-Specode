@@ -92,6 +92,7 @@ input#menu {
     position: absolute;
     padding: 20px;
     width: 100px;
+    z-index: 2;
 }
 
 .menu-content li a:hover {
@@ -105,6 +106,7 @@ input#menu {
     background-color: var(--secondaryColour);
     color: whitesmoke;
     font-style: italic;
+    border-bottom: 3px solid var(--thirdColour);
 }
 
 .dropdown-menu li {
@@ -163,6 +165,7 @@ input:checked ~ .menu-content {
     width: 100%;
     position: fixed;
     z-index: 1;
+    border-bottom: 2px solid var(--thirdColour);
 }
 
 .menu-content li a:hover {
