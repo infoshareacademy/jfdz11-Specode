@@ -229,11 +229,12 @@ input:checked ~ .menu-content {
     height: 2rem;
 }
 
-.functions div p{
-    
-}
 
 /* START SHOW AND HIDE FUNCTION IN OUR FUNCTIONS */
+
+.functions{
+    background-color: var(--secondaryColour);
+}
 
 .diet, .shop, .training, .measurement{
     background-color: var(--seventhColour);
