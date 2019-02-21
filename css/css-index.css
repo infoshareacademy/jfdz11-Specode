@@ -231,6 +231,9 @@ input:checked ~ .menu-content {
 
 /* START SHOW AND HIDE FUNCTION IN OUR FUNCTIONS */
 
+.diet, .shop, .training, .measurement{
+    background-color: var(--seventhColour);
+}
 .read-more-state {
     display: none;
   }
@@ -281,7 +284,61 @@ input:checked ~ .menu-content {
     border-radius: .25em;
     background-color: var(--sixthColour);
   }
+
+  .read-more-trigger:active{
+    background-color: var(--fourthColour);
+  }
+
+  @media only screen and (max-width: 649px){
+      .oneLabelFor4{
+          display: none;
+      }
+  }
   
+
+  @media only screen and (min-width: 649px) {
+    .oneLabelFor4{
+        display:flex;
+        justify-content: center;
+        background-color: var(--secondaryColour);
+    }
+
+    .functions{
+        background-color: var(--secondaryColour);
+        flex-direction: row;
+        min-height: 250px;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .functions .diet, .functions .shop, .functions .training, .functions .measurement{
+        width: 40%;
+    }
+
+    .read-more-trigger{
+        display:none;
+    }
+
+    .read-more-trigger-dieta, .read-more-trigger-zakupy, .read-more-trigger-trening, .read-more-trigger-measurement {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        padding: 1em;
+        color: var(--primaryColour);
+        border: 1px solid var(--secondaryColour);
+        border-radius: .25em;
+        background-color: var(--sixthColour);
+        content: 'DIETA';
+        margin: 0.5rem 0.7rem;
+    }
+
+    .read-more-trigger-dieta:hover, .read-more-trigger-zakupy:hover, .read-more-trigger-trening:hover, .read-more-trigger-measurement:hover{
+        background-color: var(--fourthColour);
+    }
+
+    
+  }
 /* END SHOW AND HIDE FUNCTION IN OUR FUNCTIONS */
 
 /*************************************************************************
