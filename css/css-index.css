@@ -37,6 +37,10 @@ body {
 
 @media only screen and (max-width: 568px) {
 
+    .functions{
+        background-color: var(--secondaryColour);
+    }
+
 #burger-container{
     position: relative;
     width: 100px;
@@ -233,6 +237,7 @@ input:checked ~ .menu-content {
 
 .diet, .shop, .training, .measurement{
     background-color: var(--seventhColour);
+    box-shadow: 10px 10px 20px -4px rgba(220,227,158,1);
 }
 .read-more-state {
     display: none;
@@ -335,6 +340,8 @@ input:checked ~ .menu-content {
 
     .read-more-trigger-dieta:hover, .read-more-trigger-zakupy:hover, .read-more-trigger-trening:hover, .read-more-trigger-measurement:hover{
         background-color: var(--fourthColour);
+        box-shadow: 5px 6px 10px 0px rgba(189,247,54,1);
+
     }
 
     
