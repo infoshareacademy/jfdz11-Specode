@@ -29,7 +29,7 @@ body {
 
 /*************************************************************************
 *
-* Sekcja Marcina
+* menu and functions
 *
 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
 
@@ -37,6 +37,9 @@ body {
 
 @media only screen and (max-width: 568px) {
 
+    .logo-1 {
+        display: none;
+    }
     .functions{
         background-color: var(--secondaryColour);
     }
@@ -149,7 +152,7 @@ input:checked ~ .menu-content {
   
 }
 
-/* END MAX WIDTH 600px */
+/* END MAX WIDTH 568px */
 
 
 
@@ -168,9 +171,20 @@ input:checked ~ .menu-content {
     border-bottom: 2px solid var(--thirdColour);
 }
 
-.menu-content li a:hover {
+.menu-content-list li a:hover {
     background-color: var(--thirdColour);
 }
+
+.logo-1 {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    padding: 10px;
+    color: whitesmoke;
+    background-color: var(--secondaryColour);
+    height: 3rem;
+}
+
 
 .menu-content a {
     text-decoration: none;
@@ -330,16 +344,25 @@ input:checked ~ .menu-content {
     }
 
     .read-more-trigger-dieta, .read-more-trigger-zakupy, .read-more-trigger-trening, .read-more-trigger-measurement {
+        display: none;
+    }
+
+    .read-more-trigger-one {
         position: relative;
         cursor: pointer;
         display: inline-block;
-        padding: 1em;
+        padding: 1.5rem 2.5rem;
         color: var(--primaryColour);
         border: 1px solid var(--secondaryColour);
         border-radius: .25em;
         background-color: var(--sixthColour);
         content: 'DIETA';
         margin: 0.5rem 0.7rem;
+    }
+
+    .read-more-trigger-one:hover {
+        background-color: var(--fourthColour);
+        box-shadow: 5px 6px 10px 0px rgba(189,247,54,1);
     }
 
     .read-more-trigger-dieta:hover, .read-more-trigger-zakupy:hover, .read-more-trigger-trening:hover, .read-more-trigger-measurement:hover{
@@ -462,13 +485,6 @@ img.hero__slides {
   .prev, .next,.text {font-size: 11px}
 }
 
-
-
-/*************************************************************************
-*
-* Sekcja Main
-*
-↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
 
 
 /*************************************************************************
