@@ -6,6 +6,7 @@
     --fifthColour: rgb(255, 255, 51);
     --sixthColour: rgb(255, 255, 204);
     --seventhColour: rgb(255,255,255);
+    --eightColour: rgba(255,255,51,0.3);
 }
 
 * {
@@ -29,7 +30,7 @@ body {
 
 /*************************************************************************
 *
-* Sekcja Marcina
+* menu and functions
 *
 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
 
@@ -37,13 +38,16 @@ body {
 
 @media only screen and (max-width: 568px) {
 
+    .logo-1 {
+        display: none;
+    }
     .functions{
         background-color: var(--secondaryColour);
     }
 
 #burger-container{
     position: relative;
-    width: 100px;
+    width: 70px;
 }
 
 #burger{
@@ -149,10 +153,7 @@ input:checked ~ .menu-content {
   
 }
 
-/* END MAX WIDTH 600px */
-
-
-
+/* END MAX WIDTH 568px */
 
 
 @media only screen and (min-width: 569px) {
@@ -168,8 +169,18 @@ input:checked ~ .menu-content {
     border-bottom: 2px solid var(--thirdColour);
 }
 
-.menu-content li a:hover {
+.menu-content-list li a:hover {
     background-color: var(--thirdColour);
+}
+
+.logo-1 {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    padding: 10px;
+    color: whitesmoke;
+    background-color: var(--secondaryColour);
+    height: 3rem;
 }
 
 .menu-content a {
@@ -330,16 +341,25 @@ input:checked ~ .menu-content {
     }
 
     .read-more-trigger-dieta, .read-more-trigger-zakupy, .read-more-trigger-trening, .read-more-trigger-measurement {
+        display: none;
+    }
+
+    .read-more-trigger-one {
         position: relative;
         cursor: pointer;
         display: inline-block;
-        padding: 1em;
+        padding: 1.5rem 2.5rem;
         color: var(--primaryColour);
         border: 1px solid var(--secondaryColour);
         border-radius: .25em;
         background-color: var(--sixthColour);
         content: 'DIETA';
         margin: 0.5rem 0.7rem;
+    }
+
+    .read-more-trigger-one:hover {
+        background-color: var(--fourthColour);
+        box-shadow: 5px 6px 10px 0px rgba(189,247,54,1);
     }
 
     .read-more-trigger-dieta:hover, .read-more-trigger-zakupy:hover, .read-more-trigger-trening:hover, .read-more-trigger-measurement:hover{
@@ -357,130 +377,113 @@ input:checked ~ .menu-content {
 * Sekcja Hero
 *
 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
-.hero__slides {display: none}
-img {vertical-align: middle;}
-
-.hero {
-  width: 100%;
-  position: relative;
-  margin: 0;
-  border-top: 2px;
-  border-top-color: green;
-  background-color: var(--secondaryColour);
+.hero__slides {
+    display:none;
 }
 
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: var(--primaryColour);
-  font-weight: bold;
-  font-size: 1.2rem;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+.hero__container { 
+    position: relative; 
+    margin: 0 auto; 
+    width: 100%; 
+    height: auto; 
 }
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+.hero__slides { 
+    width: 100%; 
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: var(--primaryColour);
-  color: var(--seventhColour);
+hero__container img {
+    height: 100%;
+    width: 100%;
 }
 
-/* Caption text */
-.slides__header{
-    display: inline-block;
-    border: 2px solid black;
-    background-color: rgba(0, 161, 0,0.5);
+.hero__nav {
+    display: flex;
+    position:absolute;
+    left:0;
+    bottom:0;
+    transform:translate(0%,0%);-ms-transform:translate(0%,0%); 
+    width: 100%;
     text-align: center;
-    position: absolute;
-    padding: 2.5%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 1rem;
+ }
+
+.hero__nav .nav__left { 
+    width: 10%; 
+    align-self: flex-start; 
+}
+.hero__nav .nav__right { 
+    width: 10%; 
+    align-self: flex-end;
+}
+
+.nav__right, .nav__left {
+    background-color: transparent;
     font-size: 1.5rem;
 }
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
+
+.hero__nav .nav__right:hover, .hero__nav .nav__left:hover { 
+    color: var(--fourthColour); 
 }
 
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+.hero__text {
+    display: flex;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width: 30%;
 }
 
-.dots__container {
-    background-color: none;
-    outline-color:  var(--secondaryColour);
-}
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
+.text__container {
+    border: 10px groove var(--fourthColour);
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 1.5%;
+    background-color: var(--eightColour);
+    border-radius: 10px;
+    font-weight: bold;
+    border-width: 4px;
 }
 
-.active, .dot:hover {
-  background-color: #717171;
+.hero__dots {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: flex-end;
+    padding-block-end: 1%;
 }
 
-
-/* Fading animation */
-.slides__fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
+.hero__nav .nav__buttons {
+    background-color: transparent;
+    text-align: center;
+    border: 2px solid var(--fourthColour);
+    border-radius: 50%;
+    cursor: pointer;
+    height: 0.8rem;
+    width: 0.8rem;
 }
 
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+.hero__nav .nav__buttons2 {
+    background-color: var(--fifthColour);
 }
 
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+@media only screen and (min-width: 569px) {
+    .nav__right, .nav__left {
+        background-color: transparent;
+        font-size: 3rem;
+    }
+    .text__container {
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 1.5%;
+        background-color: var(--eightColour);
+        border-width: 10px;
+    }
+    .hero__nav .nav__buttons {
+        height: 1rem;
+        width: 1rem;
+    }
 }
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
-}
-
-
-
-/*************************************************************************
-*
-* Sekcja Main
-*
-↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
 
 
 /*************************************************************************

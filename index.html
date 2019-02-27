@@ -28,8 +28,10 @@
             </div>
             </label>
         
+        <div class="opacity"></div>
             <div class="menu-content">
-                <ul>
+                <ul class="menu-content-list">
+                    <li class="logo-1"><img src="photos/logo-99.png" alt="logo"></li>
                     <li><a href="#">Logo</a></li>
                     <li><a href="#">Czym sie zajmujemy</a></li>
                     <li><a href="#">Zapis na premierę</a></li>
@@ -40,70 +42,63 @@
         <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <!----------------------------------------------------------->
     <div class="hero">
-            <div class="hero__slides slides__fade">
-                <img src="photos/background.jpg" style="width:100%">
-                <div class="slides__header">Żyj z nami zdrowo!</div>
-                <div class="slide__description">
-                    Pomożemy ci ułożyć zróżnicowany plan diety i dobrać odpowiednie ćwiczenia
+        <div class="hero__container">
+            <img class="hero__slides" src="photos/background.jpg">
+            <div class="hero__text">
+                <div class="text__container">Żyj z nami zdrowo!</div>
+            </div>
+            <img class="hero__slides" src="photos/background2.jpg">
+            <div class="hero__text">
+                    <div class="text__container">Odżywiaj się!</div>
+              </div>
+            <img class="hero__slides" src="photos/background3.jpg">
+            <div class="hero__text">
+                    <div class="text__container">Ćwicz!</div>
+              </div>
+            <div class="hero__nav">
+                <div class="nav__left" onclick="plusDivs(-1)">&#10094;</div>
+                <div class="hero__dots">
+                    <span class="nav__buttons buttons__demo" onclick="currentDiv(1)"></span>
+                    <span class="nav__buttons buttons__demo" onclick="currentDiv(2)"></span>
+                    <span class="nav__buttons buttons__demo" onclick="currentDiv(3)"></span>
                 </div>
+                <div class="nav__right" onclick="plusDivs(1)">&#10095;</div>
             </div>
-                  
-            <div class="hero__slides slides__fade">
-                <img src="photos/background2.jpg" style="width:100%">
-                <div class="text">Caption Two</div>
-            </div>
-                  
-            <div class="hero__slides slides__fade">
-                <img src="photos/background3.jpg" style="width:100%">
-                <div class="text">Caption Three</div>
-            </div>
-                
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                        
-            <div class="dots__container" style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span> 
-                <span class="dot" onclick="currentSlide(2)"></span> 
-                <span class="dot" onclick="currentSlide(3)"></span> 
-            </div>
+        </div> 
     </div>
-                  
     <script>
-            var slideIndex = 1;
-            showSlides(slideIndex);
-        
-            function plusSlides(n) {
-            showSlides(slideIndex += n);
-            }
-        
-            function currentSlide(n) {
-            showSlides(slideIndex = n);
-            }
-        
-            function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("hero__slides");
-            var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}    
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";  
-            dots[slideIndex-1].className += " active";
-            }
-        </script>
-
-    </div>
-<!----------------------------------------------------------->
-
-<!----------------------------------------------------------->
-    <div class="main">
-        
-    </div>
+    var slideIndex = 1;
+showDivs(slideIndex);
+          
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+          
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+          
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("hero__slides");
+  var dots = document.getElementsByClassName("buttons__demo");
+  var tekst = document.getElementsByClassName("hero__text");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none"; 
+  }
+  for (i=0; i < tekst.length; i++) {
+    tekst[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" nav__buttons2", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  tekst[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " nav__buttons2";
+}
+</script>
 <!----------------------------------------------------------->
 
 <!----------------------------------------------------------->
@@ -180,8 +175,9 @@
 <label for="post-2" class="read-more-trigger-zakupy">Zakupy</label>
 <label for="post-3" class="read-more-trigger-trening">Trening</label>
 <label for="post-4" class="read-more-trigger-measurement">Pomiary</label>
-</div>
+<label class="read-more-trigger-one" onclick="toggleAll()">Pokaz wiecej</label>
 
+</div>
 
 
   

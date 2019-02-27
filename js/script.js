@@ -36,17 +36,24 @@ timeBetweenSlides = 1,
     // array of possible vendor prefixes
     pfx  = '',
     slidy = document.getElementById("slidy"); 
-if (slidy.style.animationName !== undefined) { animation = true; } 
+// TODO: if (slidy.style.animationName !== undefined) { animation = true; } 
 // browser supports keyframe animation w/o prefixes
 
 if( animation === false ) {
   for( var i = 0; i < domPrefixes.length; i++ ) {
-    if( slidy.style[ domPrefixes[i] + 'AnimationName' ] !== undefined ) {
-      pfx = domPrefixes[ i ];
-      animationstring = pfx + 'Animation';
-      keyframeprefix = '-' + pfx.toLowerCase() + '-';
-      animation = true;
-      break;
-    }
+    // TODO: if( slidy.style[ domPrefixes[i] + 'AnimationName' ] !== undefined ) {
+    //   pfx = domPrefixes[ i ];
+    //   animationstring = pfx + 'Animation';
+    //   keyframeprefix = '-' + pfx.toLowerCase() + '-';
+    //   animation = true;
+    //   break;
+    // }
   }
+}
+
+function toggleAll() {
+  document.getElementById('post-1').checked = !document.getElementById('post-1').checked;
+  document.getElementById('post-2').checked = !document.getElementById('post-2').checked;
+  document.getElementById('post-3').checked = !document.getElementById('post-3').checked;
+  document.getElementById('post-4').checked = !document.getElementById('post-4').checked;
 }
