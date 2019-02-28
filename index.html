@@ -12,8 +12,6 @@
 </head>
 <body>
 <!----------------------------------------------------------->
-  
-
 <!-- phone -->
         <div class="dropdown-menu">
             <input type="checkbox" id="menu" />
@@ -45,15 +43,21 @@
         <div class="hero__container">
             <img class="hero__slides" src="photos/background.jpg">
             <div class="hero__text">
-                <div class="text__container">Żyj z nami zdrowo!</div>
+                <div class="empty"></div>
+                <div class="text__container">Żyj z nami zdrowo! <br> Bo dobre samopoczucie jest bardzo ważne!</div>
+                <button type="submit" class="button__form" onclick="window.location.href='#form'">Formularz zgłoszeniowy</button>
             </div>
             <img class="hero__slides" src="photos/background2.jpg">
             <div class="hero__text">
+                    <div class="empty"></div>
                     <div class="text__container">Odżywiaj się!</div>
+                    <button type="submit" class="button__form" onclick="window.location.href='#form'">Formularz zgłoszeniowy</button>
               </div>
             <img class="hero__slides" src="photos/background3.jpg">
             <div class="hero__text">
+                    <div class="empty"></div>
                     <div class="text__container">Ćwicz!</div>
+                    <button type="submit" class="button__form" onclick="window.location.href='#form'">Formularz zgłoszeniowy</button>
               </div>
             <div class="hero__nav">
                 <div class="nav__left" onclick="plusDivs(-1)">&#10094;</div>
@@ -95,16 +99,10 @@ function showDivs(n) {
     dots[i].className = dots[i].className.replace(" nav__buttons2", "");
   }
   x[slideIndex-1].style.display = "block";
-  tekst[slideIndex-1].style.display = "block";
+  tekst[slideIndex-1].style.display = "flex";
   dots[slideIndex-1].className += " nav__buttons2";
 }
 </script>
-<!----------------------------------------------------------->
-
-<!----------------------------------------------------------->
-    <div class="form">
-
-    </div>
 <!----------------------------------------------------------->
 
 <!----------------------------------------------------------->
@@ -178,13 +176,13 @@ function showDivs(n) {
 <label class="read-more-trigger-one" onclick="toggleAll()">Pokaz wiecej</label>
 
 </div>
+<!----------------------------------------------------------->
+<div class="form" id="form">
+        <h>Formularz zgłoszeniowy</h>>
+        <h2>Zapisz się na premierę</h2>
 
-
-  
-
-  
-
-
+    </div>
+<!----------------------------------------------------------->
   
 <!----------------------------------------------------------->
 
