@@ -638,7 +638,6 @@ input:checked ~ .menu-content {
     align-items: center;
     justify-content: center;
     background: url(/photos/about_us_header_bg2.jpg);
-    background-repeat: no-repeat;
     background-attachment: fixed;
 }
 .about_us {
