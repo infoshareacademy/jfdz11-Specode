@@ -38,7 +38,7 @@ body {
 
 @media only screen and (max-width: 568px) {
 
-    .logo-1 {
+    .logo {
         display: none;
     }
     .functions{
@@ -130,6 +130,10 @@ input#menu {
 input:checked ~ .menu-content {
     max-height: 50%;
 }
+  
+}
+
+/* END MAX WIDTH 568px */
 
 #myBtn {
     display: none; /* Hidden by default */
@@ -150,10 +154,6 @@ input:checked ~ .menu-content {
   #myBtn:hover {
     background-color: var(--thirdColour); /* Add a dark-grey background on hover */
   }
-  
-}
-
-/* END MAX WIDTH 568px */
 
 
 @media only screen and (min-width: 569px) {
@@ -170,17 +170,20 @@ input:checked ~ .menu-content {
 }
 
 .menu-content-list li a:hover {
-    background-color: var(--thirdColour);
+    background-color: var(--fourthColour);
 }
 
-.logo-1 {
+.logo {
     text-decoration: none;
     text-align: center;
     display: block;
-    padding: 10px;
     color: whitesmoke;
     background-color: var(--secondaryColour);
     height: 3rem;
+}
+
+.logo a {
+    height: 100%;
 }
 
 .menu-content a {
@@ -228,12 +231,12 @@ input:checked ~ .menu-content {
 .functions div {
     position: relative;
     display: flex;
-    min-height: 6rem;
+    min-height: 10rem;
     align-items: center;
     border: 1px solid var(--secondaryColour);
-    border-radius: 25px;
+    border-radius: 10px;
     width: 80%;
-    margin: 0.5rem;
+    margin: 2rem;
     min-width: 300px;
     max-width: 60%;
 }
@@ -265,8 +268,14 @@ input:checked ~ .menu-content {
       flex-direction: column;
   }
 
-  .read-more-wrap li{
-      padding: 0.3rem;
+  .read-more-wrap li:first-child{
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+  .read-more-state:checked ~  .read-more-wrap li{
+      padding: 0.5rem;
       align-items: center;
       justify-content: flex-start;
   }
@@ -285,11 +294,11 @@ input:checked ~ .menu-content {
   }
   
   .read-more-state ~ .read-more-trigger:before {
-    content: 'Show more';
+    content: 'Pokaż więcej';
   }
   
   .read-more-state:checked ~ .read-more-trigger:before {
-    content: 'Show less';
+    content: 'Pokaż mniej';
   }
   
   .read-more-trigger {
@@ -309,22 +318,26 @@ input:checked ~ .menu-content {
     background-color: var(--fourthColour);
   }
 
-  @media only screen and (max-width: 649px){
-      .oneLabelFor4{
-          display: none;
-      }
-  }
+  @media only screen and (max-width: 750px){
+    .functions .oneLabelFor4{
+        display: none;
+        color:white;
+        font-size:0.0001em;
+    }
+}
   
 
-  @media only screen and (min-width: 649px) {
+  @media only screen and (min-width: 750px) {
     .oneLabelFor4{
         display:flex;
         justify-content: center;
         background-color: var(--secondaryColour);
+        margin: 0;
     }
 
     .functions{
         background-color: var(--secondaryColour);
+        background-size: 100%;
         flex-direction: row;
         min-height: 250px;
         width: 100%;
@@ -332,6 +345,9 @@ input:checked ~ .menu-content {
         justify-content: center;
     }
 
+    .functions .oneLabelFor4 {
+        margin: 0;
+    }
     .functions .diet, .functions .shop, .functions .training, .functions .measurement{
         width: 40%;
     }
@@ -367,8 +383,6 @@ input:checked ~ .menu-content {
         box-shadow: 5px 6px 10px 0px rgba(189,247,54,1);
 
     }
-
-    
   }
 /* END SHOW AND HIDE FUNCTION IN OUR FUNCTIONS */
 
@@ -692,6 +706,8 @@ input:checked ~ .menu-content {
     justify-content: center;
     color: white;
 }
+
+
 /*
    Footer section end
 */
