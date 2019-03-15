@@ -57,3 +57,8 @@ function toggleAll() {
   document.getElementById('post-3').checked = !document.getElementById('post-3').checked;
   document.getElementById('post-4').checked = !document.getElementById('post-4').checked;
 }
+
+function safeData() {
+  document.getElementById("Wyslij").innerHTML = "Wyślemy do Państwa jedną wiadomość z informacją o premierze.";
+  document.getElementById("Dane").innerHTML = "Zapewniamy o bezpieczeństwie przekazywanych danych.";
+}
