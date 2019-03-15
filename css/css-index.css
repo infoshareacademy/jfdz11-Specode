@@ -444,7 +444,6 @@ input:checked ~ .menu-content {
     cursor: pointer;
     padding: 1.5%;
     color: var(--seventhColour);
-    font-size: bold;
     border: 1px solid var(--secondaryColour);
     border-radius: .25em;
     background-color: var(--fourthColour);
@@ -503,7 +502,7 @@ input:checked ~ .menu-content {
     width: 80%;
     justify-content: center;
     align-items: flex-end;
-    padding-block-end: 1%;
+    padding-bottom: 1%;
 }
 
 /*************************************************************************
@@ -554,7 +553,6 @@ input:checked ~ .menu-content {
     border: none;
     border-bottom: 2px solid var(--fourthColour);
     padding: 0.3em;
-    background-color: none;
     line-height: 2;
 }
 
