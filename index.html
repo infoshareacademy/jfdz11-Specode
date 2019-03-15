@@ -185,8 +185,19 @@ function showDivs(n) {
         <input type="text" name="name" placeholder="Imię" required>
         <input type="text" name="surname" placeholder="Nazwisko" required>
         <input type="email" name="email" placeholder="Adres e-mail" required>
-        <button type="submit" class="form__button">Wyślij</button>
+        <button type="submit" class="form__button" onclick="safeData()">Wyślij</button>
     </div>  
+    <div class="form__data"> 
+        <p id="Wyslij"></p>
+        <p id="Dane"></p>
+    
+    </div>
+    <script>
+    function safeData() {
+        document.getElementById("Wyslij").innerHTML = "Wyślemy do Państwa jedną wiadomość z informacją o premierze.";
+        document.getElementById("Dane").innerHTML = "Zapewniamy o bezpieczeństwie przekazywanych danych.";
+    }
+    </script>
 
    
 
