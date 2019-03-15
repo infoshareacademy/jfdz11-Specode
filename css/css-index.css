@@ -598,7 +598,7 @@ input:checked ~ .menu-content {
         width: 30%;
         font-size: 1rem;
     }
-}
+
     .hero__nav .nav__buttons {
         height: 1rem;
         width: 1rem;
@@ -610,7 +610,7 @@ input:checked ~ .menu-content {
     }
     .hero__text .button__form {
         font-size: 1rem;
-        width: 30%;
+        width: 50%;
     }
 
     .form__form {
