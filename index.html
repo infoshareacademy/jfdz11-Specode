@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,19 +40,19 @@
 <!----------------------------------------------------------->
     <div class="hero" id="navHero">
         <div class="hero__container">
-            <img class="hero__slides" src="photos/background1_2.png">
+            <img class="hero__slides" src="photos/background1_2.png" alt="Pear background">
             <div class="hero__text">
                 <div class="empty"></div>
                 <div class="text__container">Żyj z nami zdrowo! <br> Bo dobre samopoczucie jest bardzo ważne!</div>
                 <button type="submit" class="button__form" onclick="window.location.href='#form'">Formularz zgłoszeniowy</button>
             </div>
-            <img class="hero__slides" src="photos/background2_2.png">
+            <img class="hero__slides" src="photos/background2_2.png" alt="Plate with fruit background">
             <div class="hero__text">
                     <div class="empty"></div>
                     <div class="text__container">Odżywiaj się!</div>
                     <button type="submit" class="button__form" onclick="window.location.href='#form'">Formularz zgłoszeniowy</button>
               </div>
-            <img class="hero__slides" src="photos/background3_2.png">
+            <img class="hero__slides" src="photos/background3_2.png" alt="Plate with salad background">
             <div class="hero__text">
                     <div class="empty"></div>
                     <div class="text__container">Ćwicz!</div>
@@ -177,7 +177,6 @@ function showDivs(n) {
         
 </div>
 
-<!----------------------------------------------------------->
 <div class="form" id="form">
     <div class="form__header">
         <h1>Formularz zgłoszeniowy</h1>
@@ -187,16 +186,14 @@ function showDivs(n) {
         <input type="text" name="name" placeholder="Imię" required>
         <input type="text" name="surname" placeholder="Nazwisko" required>
         <input type="email" name="email" placeholder="Adres e-mail" required>
-        <button type="submit" class="form__button">Wyślij</button>
+        <button type="submit" class="form__button" onclick="safeData()">Wyślij</button>
     </div>  
-
-   
-
-
+    <div class="form__data"> 
+        <p id="Wyslij"></p>
+        <p id="Dane"></p>
+    
     </div>
-<!----------------------------------------------------------->
-  
-<!----------------------------------------------------------->
+    </div>
 
 <div class="row about_us_header">
         <h2>Meet our team</h2>
