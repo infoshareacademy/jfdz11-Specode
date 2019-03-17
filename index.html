@@ -36,84 +36,91 @@
             </div>
         </div>
         <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-
-    
+        
         <div class="hero" id="navHero">
-            <div class="hero__container">
-                <img class="hero__slides" src="photos/background1_2.png" alt="Pear background"> <
-                <div class="hero__text">
-                    <div class="empty"></div>
-                    <div class="text__container">Żyj z nami zdrowo! <br> Bo dobre samopoczucie jest bardzo ważne!</div>
-                    <button type="submit" class="button__form" onclick="window.location.href='#form'">Formularz zgłoszeniowy</button>
-                </div>
-                <img class="hero__slides" src="photos/background2_2.png" alt="Plate with fruit background">
-                <div class="hero__text">
+                <div class="hero__container">
+                    <img class="hero__slides" src="photos/background1_2.png" alt="Pear background"> <
+                    <div class="hero__text">
                         <div class="empty"></div>
-                        <div class="text__container">Odżywiaj się!</div>
+                        <div class="text__container">Żyj z nami zdrowo! <br> Bo dobre samopoczucie jest bardzo ważne!</div>
                         <button type="submit" class="button__form" onclick="window.location.href='#form'">Formularz zgłoszeniowy</button>
-                  </div>
-                <img class="hero__slides" src="photos/background3_2.png" alt="Plate with salad background">
-                <div class="hero__text">
-                        <div class="empty"></div>
-                        <div class="text__container">Ćwicz!</div>
-                        <button type="submit" class="button__form" onclick="window.location.href='#form'">Formularz zgłoszeniowy</button>
-                  </div><!---
-                <div class="hero__nav">
-                    <div class="nav__left" onclick="plusDivs(-1)">&#10094;</div>
-                    <div class="hero__dots">
-                        <span class="nav__buttons buttons__demo" onclick="currentDiv(1)"></span>
-                        <span class="nav__buttons buttons__demo" onclick="currentDiv(2)"></span>
-                        <span class="nav__buttons buttons__demo" onclick="currentDiv(3)"></span>
                     </div>
-                    <div class="nav__right" onclick="plusDivs(1)">&#10095;</div>
-                </div>--->
-            </div> 
-        </div>
-    
-        <script>
-            var heroSlides = document.getElementById('navHero');
-            heroSlides.addEventListener('mouseover', stopSlider);
-            heroSlides.addEventListener('mouseout', startSlider);
-    
-            function startSlider() {
-                var myIndex = 0;
-                function carousel_slides() {
-                    var i;
-                    var x = document.getElementsByClassName("hero__slides");
-                    for (i = 0; i < x.length; i++) {
-                        x[i].style.display = "none";  
+                    <img class="hero__slides" src="photos/background2_2.png" alt="Plate with fruit background">
+                    <div class="hero__text">
+                            <div class="empty"></div>
+                            <div class="text__container">Odżywiaj się!</div>
+                            <button type="submit" class="button__form" onclick="window.location.href='#form'">Formularz zgłoszeniowy</button>
+                      </div>
+                    <img class="hero__slides" src="photos/background3_2.png" alt="Plate with salad background">
+                    <div class="hero__text">
+                            <div class="empty"></div>
+                            <div class="text__container">Ćwicz!</div>
+                            <button type="submit" class="button__form" onclick="window.location.href='#form'">Formularz zgłoszeniowy</button>
+                      </div><!---
+                    <div class="hero__nav">
+                        <div class="nav__left" onclick="plusDivs(-1)">&#10094;</div>
+                        <div class="hero__dots">
+                            <span class="nav__buttons buttons__demo" onclick="currentDiv(1)"></span>
+                            <span class="nav__buttons buttons__demo" onclick="currentDiv(2)"></span>
+                            <span class="nav__buttons buttons__demo" onclick="currentDiv(3)"></span>
+                        </div>
+                        <div class="nav__right" onclick="plusDivs(1)">&#10095;</div>
+                    </div>--->
+                </div> 
+            </div>
+        
+            <script>
+                    var myIndex = 0;
+                    var showNext = true;
+                    function carousel_slides() {
+                        var i;
+                        var x = document.getElementsByClassName("hero__slides");
+                        console.log('Pierwszy: ' + showNext);
+                        setTimeout(carousel_slides,2000); 
+                        if (!showNext) {
+                            return;
+                        }
+                        for (i = 0; i < x.length; i++) {
+                             x[i].style.display = "none";  
+                        }
+                        myIndex++;
+                        if (myIndex > x.length) {myIndex = 1};   
+                         x[myIndex-1].style.display = "block"; 
                     }
-                    myIndex++;
-                    if (myIndex > x.length) {myIndex = 1};   
-                    x[myIndex-1].style.display = "block"; 
-                    setTimeout(carousel_slides,2000); 
-                }
-                carousel_slides();
-                function carousel_text() {
-                    var i;
-                    var x = document.getElementsByClassName("hero__text");
-                    for (i = 0; i < x.length; i++) {
-                        x[i].style.display = "none";  
+                    carousel_slides();
+                    function carousel_text() {
+                        var i;
+                        var x = document.getElementsByClassName("hero__text");
+                        setTimeout(carousel_text,2000);
+                        if (!showNext) {
+                            return;
+                        }
+                        for (i = 0; i < x.length; i++) {
+                            x[i].style.display = "none";  
+                        }
+                        myIndex++;
+                        if (myIndex > x.length) {myIndex = 1};   
+                        x[myIndex-1].style.display = "flex"; 
+                        
                     }
-                    myIndex++;
-                    if (myIndex > x.length) {myIndex = 1};   
-                    x[myIndex-1].style.display = "flex"; 
-                    setTimeout(carousel_text,2000); // Change image every 2 seconds
+                    carousel_text();
+        
+                var heroSlides = document.getElementById('navHero');
+                heroSlides.addEventListener('mouseover', stopSlider);
+                function stopSlider() {
+                    showNext = false;
+                    console.log(showNext);
                 }
-                carousel_text();
-            }
-            startSlider();
-    
-            function stopSlider() {
-                var x = document.getElementsByClassName("hero__slides")[0];
-                x.style.display = "block";
-                var tekst = document.getElementsByClassName("hero__text")[0];
-                tekst.style.display = "flex;"
-            }
-            stopSlider();
-    
-        </script>
-    
+                stopSlider();
+        
+                heroSlides.addEventListener('mouseout',functionNext);
+                function functionNext() {
+                   showNext = true;
+                   console.log(showNext);
+                }
+                functionNext();
+        
+            </script>
 
 <div class="functions" id="navFunction">
 

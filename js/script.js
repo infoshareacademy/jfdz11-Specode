@@ -79,3 +79,5 @@ function safeData() {
   document.getElementById("Dane").innerHTML = "Zapewniamy o bezpieczeństwie przekazywanych danych.";
 }
 
+
+
