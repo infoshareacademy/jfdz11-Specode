@@ -8,9 +8,11 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="css/css-index.css">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="js/script.js"></script>
 </head>
 <body>
+
+<!----------------------------------------------------------->
+<!-- phone -->
         <div class="dropdown-menu">
             <input type="checkbox" id="menu" />
             <label for="menu">
@@ -126,7 +128,9 @@ function showDivs(n) {
           <li>Z nami zakupy stają się jeszcze łatwiejsze!</li>
           <li class="read-more-target">Możesz dodawać własne produkty</li>
           <li class="read-more-target">Zapisywać co kupiłeś.</li>
-          <li class="read-more-target">Udostępniać listę zakupów znajomym.</li><br><br>
+          <li class="read-more-target">Udostępniać listę zakupów znajomym.</li>
+          <li></li>
+          <li></li>
         </ul>
         
         <label for="post-2" class="read-more-trigger"></label>
@@ -166,7 +170,7 @@ function showDivs(n) {
         <label for="post-2" class="read-more-trigger-zakupy">Zakupy</label>
         <label for="post-3" class="read-more-trigger-trening">Trening</label>
         <label for="post-4" class="read-more-trigger-measurement">Pomiary</label>
-        <label class="read-more-trigger-one" onclick="toggleAll()">Pokaz wiecej</label>
+        <label id="one" class="read-more-trigger-one"  onclick="toggleAll()"><p>Pokaż więcej</p></label>
         </div>
         
 </div>
@@ -245,6 +249,9 @@ function showDivs(n) {
     <div class="row footer">
         Copyright 2019 C
     </div>
+
+<!----------------------------------------------------------->
+<script src="js/script.js"></script>
 </body>
 </html>
 
