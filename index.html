@@ -61,8 +61,8 @@
             </div>
         
             <script>
-                    var myIndex = 0;
-                    var showNext = true;
+                var myIndex = 0;
+                var showNext = true;
                     function carousel_slides() {
                         var i;
                         var x = document.getElementsByClassName("hero__slides");
@@ -92,7 +92,6 @@
                         myIndex++;
                         if (myIndex > x.length) {myIndex = 1};   
                         x[myIndex-1].style.display = "flex"; 
-                        
                     }
                     carousel_text();
         
