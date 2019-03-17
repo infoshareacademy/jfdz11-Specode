@@ -55,6 +55,7 @@ var oldText = "Pokaż więcej"
 var newText = "Pokaż mniej"
 var i = 0;
 var myText = document.getElementById('one');
+
 myText.addEventListener('click', myFunction);
   function myFunction() {
     i++
@@ -64,10 +65,6 @@ myText.addEventListener('click', myFunction);
     myText.innerText = oldText;
   }
   }
-
-
-
-
 
 function toggleAll() {
 
@@ -81,3 +78,4 @@ function safeData() {
   document.getElementById("Wyslij").innerHTML = "Wyślemy do Państwa jedną wiadomość z informacją o premierze.";
   document.getElementById("Dane").innerHTML = "Zapewniamy o bezpieczeństwie przekazywanych danych.";
 }
+

@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="css/css-index.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 </head>
 <body>
 
@@ -38,70 +37,83 @@
         </div>
         <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
-    <div class="hero" id="navHero">
-        <div class="hero__container">
-            <img class="hero__slides" src="photos/background1_2.png" alt="Pear background">
-            <div class="hero__text">
-                <div class="empty"></div>
-                <div class="text__container">Żyj z nami zdrowo! <br> Bo dobre samopoczucie jest bardzo ważne!</div>
-                <button type="submit" class="button__form" onclick="window.location.href='#form'">Formularz zgłoszeniowy</button>
-            </div>
-            <img class="hero__slides" src="photos/background2_2.png" alt="Plate with fruit background">
-            <div class="hero__text">
+    
+        <div class="hero" id="navHero">
+            <div class="hero__container">
+                <img class="hero__slides" src="photos/background1_2.png" alt="Pear background"> <
+                <div class="hero__text">
                     <div class="empty"></div>
-                    <div class="text__container">Odżywiaj się!</div>
+                    <div class="text__container">Żyj z nami zdrowo! <br> Bo dobre samopoczucie jest bardzo ważne!</div>
                     <button type="submit" class="button__form" onclick="window.location.href='#form'">Formularz zgłoszeniowy</button>
-              </div>
-            <img class="hero__slides" src="photos/background3_2.png" alt="Plate with salad background">
-            <div class="hero__text">
-                    <div class="empty"></div>
-                    <div class="text__container">Ćwicz!</div>
-                    <button type="submit" class="button__form" onclick="window.location.href='#form'">Formularz zgłoszeniowy</button>
-              </div>
-            <div class="hero__nav">
-                <div class="nav__left" onclick="plusDivs(-1)">&#10094;</div>
-                <div class="hero__dots">
-                    <span class="nav__buttons buttons__demo" onclick="currentDiv(1)"></span>
-                    <span class="nav__buttons buttons__demo" onclick="currentDiv(2)"></span>
-                    <span class="nav__buttons buttons__demo" onclick="currentDiv(3)"></span>
                 </div>
-                <div class="nav__right" onclick="plusDivs(1)">&#10095;</div>
-            </div>
-        </div> 
-    </div>
-    <script>
-    var slideIndex = 1;
-showDivs(slideIndex);
-          
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-          
-function currentDiv(n) {
-  showDivs(slideIndex = n);
-}
-          
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("hero__slides");
-  var dots = document.getElementsByClassName("buttons__demo");
-  var tekst = document.getElementsByClassName("hero__text");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none"; 
-  }
-  for (i=0; i < tekst.length; i++) {
-    tekst[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" nav__buttons2", "");
-  }
-  x[slideIndex-1].style.display = "block";
-  tekst[slideIndex-1].style.display = "flex";
-  dots[slideIndex-1].className += " nav__buttons2";
-}
-</script>
+                <img class="hero__slides" src="photos/background2_2.png" alt="Plate with fruit background">
+                <div class="hero__text">
+                        <div class="empty"></div>
+                        <div class="text__container">Odżywiaj się!</div>
+                        <button type="submit" class="button__form" onclick="window.location.href='#form'">Formularz zgłoszeniowy</button>
+                  </div>
+                <img class="hero__slides" src="photos/background3_2.png" alt="Plate with salad background">
+                <div class="hero__text">
+                        <div class="empty"></div>
+                        <div class="text__container">Ćwicz!</div>
+                        <button type="submit" class="button__form" onclick="window.location.href='#form'">Formularz zgłoszeniowy</button>
+                  </div><!---
+                <div class="hero__nav">
+                    <div class="nav__left" onclick="plusDivs(-1)">&#10094;</div>
+                    <div class="hero__dots">
+                        <span class="nav__buttons buttons__demo" onclick="currentDiv(1)"></span>
+                        <span class="nav__buttons buttons__demo" onclick="currentDiv(2)"></span>
+                        <span class="nav__buttons buttons__demo" onclick="currentDiv(3)"></span>
+                    </div>
+                    <div class="nav__right" onclick="plusDivs(1)">&#10095;</div>
+                </div>--->
+            </div> 
+        </div>
+    
+        <script>
+            var heroSlides = document.getElementById('navHero');
+            heroSlides.addEventListener('mouseover', stopSlider);
+            heroSlides.addEventListener('mouseout', startSlider);
+    
+            function startSlider() {
+                var myIndex = 0;
+                function carousel_slides() {
+                    var i;
+                    var x = document.getElementsByClassName("hero__slides");
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";  
+                    }
+                    myIndex++;
+                    if (myIndex > x.length) {myIndex = 1};   
+                    x[myIndex-1].style.display = "block"; 
+                    setTimeout(carousel_slides,2000); 
+                }
+                carousel_slides();
+                function carousel_text() {
+                    var i;
+                    var x = document.getElementsByClassName("hero__text");
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";  
+                    }
+                    myIndex++;
+                    if (myIndex > x.length) {myIndex = 1};   
+                    x[myIndex-1].style.display = "flex"; 
+                    setTimeout(carousel_text,2000); // Change image every 2 seconds
+                }
+                carousel_text();
+            }
+            startSlider();
+    
+            function stopSlider() {
+                var x = document.getElementsByClassName("hero__slides")[0];
+                x.style.display = "block";
+                var tekst = document.getElementsByClassName("hero__text")[0];
+                tekst.style.display = "flex;"
+            }
+            stopSlider();
+    
+        </script>
+    
 
 <div class="functions" id="navFunction">
 
