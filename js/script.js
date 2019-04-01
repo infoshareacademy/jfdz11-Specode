@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     $("#burger-container").on('click', function(){
         $(this).toggleClass("open");
@@ -51,17 +50,20 @@ if( animation === false ) {
   }
 }
 
-const header = document.querySelector('p');
+var oldText = "Pokaż więcej"
+var newText = "Pokaż mniej"
+var i = 0;
+var myText = document.getElementById('one');
 
-header.addEventListener('click', toggleText);
-
-function toggleText() {
-  
-  header.innerText = (header.innerText == 'Elo Poziomki') ? 'Bye Bye': 'Elo Poziomki'
-}
-
-
-
+myText.addEventListener('click', myFunction);
+  function myFunction() {
+    i++
+    if( i % 2 === 1 ) {
+    myText.innerText = newText;
+  } else {
+    myText.innerText = oldText;
+  }
+  }
 
 function toggleAll() {
 
@@ -75,3 +77,6 @@ function safeData() {
   document.getElementById("Wyslij").innerHTML = "Wyślemy do Państwa jedną wiadomość z informacją o premierze.";
   document.getElementById("Dane").innerHTML = "Zapewniamy o bezpieczeństwie przekazywanych danych.";
 }
+
+
+
