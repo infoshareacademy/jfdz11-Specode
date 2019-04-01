@@ -51,20 +51,14 @@ if( animation === false ) {
   }
 }
 
-var oldText = "Pokaż więcej"
-var newText = "Pokaż mniej"
-var i = 0;
-var myText = document.getElementById('one');
-myText.addEventListener('click', myFunction);
-  function myFunction() {
-    i++
-    if( i % 2 === 1 ) {
-    myText.innerText = newText;
-  } else {
-    myText.innerText = oldText;
-  }
-  }
+const header = document.querySelector('p');
 
+header.addEventListener('click', toggleText);
+
+function toggleText() {
+  
+  header.innerText = (header.innerText == 'Elo Poziomki') ? 'Bye Bye': 'Elo Poziomki'
+}
 
 
 
