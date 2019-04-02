@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(88, 88, 88);
+}
+
+.chicken {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    position: absolute;
+
+}
+
+.chicken2 {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    position: absolute;
+    top: 20px;
+
+}
+
+.chicken3 {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    position: absolute;
+    top: 20px;
+
+}
+
+.chicken4 {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    position: absolute;
+    top: 20px;
+
+}
