@@ -15,7 +15,7 @@ body {
 .chicken2 {
     height: 100px;
     width: 100px;
-    background-color: red;
+    background-color: blue;
     position: absolute;
     top: 20px;
 
@@ -24,7 +24,7 @@ body {
 .chicken3 {
     height: 100px;
     width: 100px;
-    background-color: red;
+    background-color: rgb(9, 255, 0);
     position: absolute;
     top: 20px;
 
