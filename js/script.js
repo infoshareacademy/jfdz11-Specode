@@ -66,12 +66,22 @@ myText.addEventListener('click', myFunction);
   }
   }
 
-function toggleAll() {
 
-  document.getElementById('post-1').checked = !document.getElementById('post-1').checked;
-  document.getElementById('post-2').checked = !document.getElementById('post-2').checked;
-  document.getElementById('post-3').checked = !document.getElementById('post-3').checked;
-  document.getElementById('post-4').checked = !document.getElementById('post-4').checked;
+  querySelectorAll("#asdasd, .asdasd, #asd.casdasd")
+  document.getElementById("asasd")
+
+function toggleAll() {
+  const elements = document.querySelectorAll(".read-more-toggle");
+  console.log(elements);
+  
+  elements.forEach((element) => {
+    console.log(element.checked)
+    element.checked =  !element.checked;
+  })
+  // document.getElementById('post-1').checked = !document.getElementById('post-1').checked;
+  // document.getElementById('post-2').checked = !document.getElementById('post-2').checked;
+  // document.getElementById('post-3').checked = !document.getElementById('post-3').checked;
+  // document.getElementById('post-4').checked = !document.getElementById('post-4').checked;
 }
 
 function safeData() {
@@ -79,3 +89,25 @@ function safeData() {
   document.getElementById("Dane").innerHTML = "Zapewniamy o bezpieczeństwie przekazywanych danych.";
 }
 
+
+
+let variable = true;
+
+const test= function() {
+  console.log('qwe')
+  console.log(variable)
+
+  // if(variable) {
+  //   variable = false;
+  // } else {
+  //   variable = true
+  // }
+
+  variable = !variable
+  console.log('ooo',variable)
+}
+
+
+
+
+test();test();test();test();test();test();

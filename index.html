@@ -86,7 +86,7 @@
                     myIndex++;
                     if (myIndex > x.length) {myIndex = 1};   
                     x[myIndex-1].style.display = "block"; 
-                    setTimeout(carousel_slides,2000); 
+                    setTimeout(carousel_slides,5000); 
                 }
                 carousel_slides();
                 function carousel_text() {
@@ -98,12 +98,14 @@
                     myIndex++;
                     if (myIndex > x.length) {myIndex = 1};   
                     x[myIndex-1].style.display = "flex"; 
-                    setTimeout(carousel_text,2000); // Change image every 2 seconds
+                    setTimeout(carousel_text,5000); // Change image every 2 seconds
                 }
                 carousel_text();
             }
             startSlider();
     
+            var x = document.getElementsByClassName("hero__slides")[0];
+            var tekst = document.getElementsByClassName("hero__text")[0];
             function stopSlider() {
                 var x = document.getElementsByClassName("hero__slides")[0];
                 x.style.display = "block";
@@ -119,7 +121,7 @@
 
             <div class="diet">
                     <img src="photos/logo-diet.png" alt="logo-diet">
-                <input type="checkbox" class="read-more-state" id="post-1" />
+                <input type="checkbox" class="read-more-state read-more-toggle" id="post-1" />
               
                 <ul class="read-more-wrap">
                   <li>Układamy za Ciebie różnorodny jadłospis!</li>
@@ -134,7 +136,7 @@
 
     <div class="shop">
             <img src="photos/logo-shopping.png" alt="logo-shopping">
-        <input type="checkbox" class="read-more-state" id="post-2" />
+        <input type="checkbox" class="read-more-state read-more-toggle" id="post-2" />
       
         <ul class="read-more-wrap">
           <li>Z nami zakupy stają się jeszcze łatwiejsze!</li>
@@ -151,7 +153,7 @@
 
     <div class="training">
             <img src="photos/logo-gym.png" alt="logo-gym">
-        <input type="checkbox" class="read-more-state" id="post-3" />
+        <input type="checkbox" class="read-more-state read-more-toggle" id="post-3" />
       
         <ul class="read-more-wrap">
           <li>Układamy profesjonalne treningi dla początkujących, średniozaawansowanych i zaawansowanych!</li>
@@ -165,7 +167,7 @@
 
     <div class="measurement">
             <img src="photos/logo-measurement.png" alt="logo-measurement">
-        <input type="checkbox" class="read-more-state" id="post-4" />
+        <input type="checkbox" class="read-more-state read-more-toggle" id="post-4" />
       
         <ul class="read-more-wrap">
           <li>Dzięki nam będziesz mógł śledzić postępy jeszcze łatwiej!</li>
@@ -178,10 +180,10 @@
     </div>
 
     <div class="oneLabelFor4">
-        <label for="post-1" class="read-more-trigger-dieta">Dieta</label>
-        <label for="post-2" class="read-more-trigger-zakupy">Zakupy</label>
-        <label for="post-3" class="read-more-trigger-trening">Trening</label>
-        <label for="post-4" class="read-more-trigger-measurement">Pomiary</label>
+        <label for="post-1" class=" read-more-trigger-dieta">Dieta</label>
+        <label for="post-2" class=" read-more-trigger-zakupy">Zakupy</label>
+        <label for="post-3" class=" read-more-trigger-trening">Trening</label>
+        <label for="post-4" class=" read-more-trigger-measurement">Pomiary</label>
         <label id="one" class="read-more-trigger-one"  onclick="toggleAll()"><p>Pokaż więcej</p></label>
         </div>
         
