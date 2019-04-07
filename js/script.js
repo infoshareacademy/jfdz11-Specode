@@ -5,7 +5,7 @@ $(document).ready(function(){
 });
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction(), changeMenuColor()};
+window.onscroll = function() {scrollFunction(), changeMenuColor(), constrictMenu()};
 
 function scrollFunction() {
   if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
@@ -100,13 +100,11 @@ const test= function() {
 test();test();test();test();test();test();
 
 
-let parent = document.querySelector('.menu-content-list')
-let parentLi = parent.querySelectorAll('li')
+let parent = document.querySelector('.menu-content-list');
+let parentLi = parent.querySelectorAll('li');
+let parentA = document.querySelectorAll('.menu-content-list a');
 
 parentLi[0].style.backgroundColor = '#34a51a';
-parentLi[1].style.backgroundColor = '#34a51a';
-parentLi[2].style.backgroundColor = '#34a51a';
-parentLi[3].style.backgroundColor = '#34a51a';
 
 
 
@@ -141,9 +139,22 @@ function changeMenuColor() {
   } else {
     parentLi[3].style.backgroundColor = '#353535'
   }
-
-
-  console.log('offset = ' + offset);
 }
 
 
+  function constrictMenu() {
+
+    var d = document.documentElement;
+    var offset = d.scrollTop ;
+    for( var i = 0; i < parentLi.length; i++ ) {
+      if ( offset > 400 || document.documentElement.scrollTop > 400 ) {
+        parentLi[i].style.height = "2rem"
+        parentA[i].style.height = "2rem"
+      } 
+      
+      if ( offset < 400 || document.documentElement.scrollTop < 400 ) {
+        parentLi[i].style.height = "3rem"
+        parentA[i].style.height = "3rem"
+      }
+      }
+    }
