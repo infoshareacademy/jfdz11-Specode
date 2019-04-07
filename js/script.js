@@ -5,7 +5,7 @@ $(document).ready(function(){
 });
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function() {scrollFunction(), changeMenuColor()};
 
 function scrollFunction() {
   if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
@@ -66,15 +66,13 @@ myText.addEventListener('click', myFunction);
   }
 
 
-  querySelectorAll("#asdasd, .asdasd, #asd.casdasd")
+  //querySelectorAll("#asdasd, .asdasd, #asd.casdasd")
   document.getElementById("asasd")
 
 function toggleAll() {
   const elements = document.querySelectorAll(".read-more-toggle");
-  console.log(elements);
   
   elements.forEach((element) => {
-    console.log(element.checked)
     element.checked =  !element.checked;
   })
   // document.getElementById('post-1').checked = !document.getElementById('post-1').checked;
@@ -93,20 +91,59 @@ function safeData() {
 let variable = true;
 
 const test= function() {
-  console.log('qwe')
-  console.log(variable)
-
-  // if(variable) {
-  //   variable = false;
-  // } else {
-  //   variable = true
-  // }
-
   variable = !variable
-  console.log('ooo',variable)
 }
 
 
 
 
 test();test();test();test();test();test();
+
+
+let parent = document.querySelector('.menu-content-list')
+let parentLi = parent.querySelectorAll('li')
+
+parentLi[0].style.backgroundColor = '#34a51a';
+parentLi[1].style.backgroundColor = '#34a51a';
+parentLi[2].style.backgroundColor = '#34a51a';
+parentLi[3].style.backgroundColor = '#34a51a';
+
+
+
+
+
+function changeMenuColor() {
+
+  var d = document.documentElement;
+  var offset = d.scrollTop ;
+
+
+  if (offset < 450 ){
+    parentLi[0].style.backgroundColor = '#34a51a';
+  } else {
+    parentLi[0].style.backgroundColor = '#353535'
+  }
+
+  if (offset > 450 && offset < 850 ){
+    parentLi[1].style.backgroundColor = '#34a51a';
+  } else {
+    parentLi[1].style.backgroundColor = '#353535'
+  }
+
+  if (offset > 850 && offset < 1300 ){
+    parentLi[2].style.backgroundColor = '#34a51a';
+  } else {
+    parentLi[2].style.backgroundColor = '#353535'
+  }
+
+  if (offset > 1300 && offset < 2000 ){
+    parentLi[3].style.backgroundColor = '#34a51a';
+  } else {
+    parentLi[3].style.backgroundColor = '#353535'
+  }
+
+
+  console.log('offset = ' + offset);
+}
+
+

@@ -66,7 +66,6 @@
                     function carousel_slides() {
                         var i;
                         var x = document.getElementsByClassName("hero__slides");
-                        console.log('Pierwszy: ' + showNext);
                         setTimeout(carousel_slides,2000); 
                         if (!showNext) {
                             return;
@@ -99,14 +98,12 @@
                 heroSlides.addEventListener('mouseover', stopSlider);
                 function stopSlider() {
                     showNext = false;
-                    console.log(showNext);
                 }
                 stopSlider();
         
                 heroSlides.addEventListener('mouseout',functionNext);
                 function functionNext() {
                    showNext = true;
-                   console.log(showNext);
                 }
                 functionNext();
         

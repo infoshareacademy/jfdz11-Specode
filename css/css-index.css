@@ -175,6 +175,10 @@ input:checked ~ .menu-content {
     background-color: var(--fourthColour);
 }
 
+.menu-content-list {
+    background-color: var(--secondaryColour);
+}
+
 .logo {
     text-decoration: none;
     text-align: center;
@@ -194,7 +198,6 @@ input:checked ~ .menu-content {
     display: block;
     padding: 10px;
     color: whitesmoke;
-    background-color: var(--secondaryColour);
     height: 3rem;
 }
 
