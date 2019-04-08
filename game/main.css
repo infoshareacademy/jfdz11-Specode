@@ -38,3 +38,20 @@ body {
     top: 20px;
 
 }
+
+#catcher {
+    position: absolute;
+    height: 100px;
+    width: 200px;
+    background-color: red;
+    bottom: 0;
+    left: 50px;
+}
+
+#points {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    color: black;
+    font-size: 50px;
+}
