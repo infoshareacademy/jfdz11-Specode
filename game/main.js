@@ -1,8 +1,8 @@
 
 
-//     let chickenArray = ['chicken', 'chicken2'];
-//     let leftPosition = ['200px', '400px', '600px', '800px']
-//     console.log(chickenArray)
+    // let chickenArray = ['chicken', 'chicken2'];
+    // let leftPosition = ['200px', '400px', '600px', '800px']
+    // console.log(chickenArray)
 
 //         let chickenElement = document.createElement("div");
 //         chickenElement.classList.add(chickenArray[1]);
