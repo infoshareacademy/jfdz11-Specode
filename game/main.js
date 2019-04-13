@@ -1,73 +1,31 @@
 
+  class Timer {
+    constructor(timerElement) {
+      this.timerElement = timerElement;
+      this.time = 0;
+      this.interval = null;
+    }
+    
+    start() {
+      this.interval = setInterval(() => {
+        this.time += 0.1
+        this.timerElement.innerHTML = `Time: ${this.time.toFixed(2)}`
+      }, 100)
+    }
 
-    // let chickenArray = ['chicken', 'chicken2'];
-    // let leftPosition = ['200px', '400px', '600px', '800px']
-    // console.log(chickenArray)
+    stop() {
+      clearInterval(this.interval)
+    }
+  }
 
-//         let chickenElement = document.createElement("div");
-//         chickenElement.classList.add(chickenArray[1]);
-//         document.querySelector("body").appendChild(chickenElement);
-//         const currentElement = document.querySelectorAll('.chicken, .chicken2');
-// // Dlaczego trzeba w tych linijkach ustawiać style, a pozniej przykladowo w 146 i 166 ponownie ? teoretycznie
-// // powinny brac z tych dwóch ponizej położenie, ale jak usune te tutaj, to kwadraty nie spadają...
+  const timer = new Timer(document.getElementById('timer'));
 
-//     function addChicken() {
-//     chickenElement = document.createElement("div");
-//         chickenElement.classList.add(chickenArray[(Math.round(Math.random()*1))]);
-//         document.querySelector("body").appendChild(chickenElement);
-//         chickenElement.style.left = leftPosition[(Math.round(Math.random()*2))];
-//     }
-
-
-//     let removeChicken = (currentElement) => {
-//         document.querySelector('body').removeChild(currentElement);
-//     }
-
-
-
-
-//     function chickens() {
-
-//         let licznik = -200;
-//         let maxTop = 200
-//         setInterval(() => {
-//             const currentElement = document.querySelector('.chicken, .chicken2');
-
-//             console.log(currentElement.style.top)
-//             licznik += Math.random() * 10;
-//             chickenElement.style.top = licznik + 'px';
-
-//             for(i = 0; i < 4; i++) {
-//                 setTimeout(function () {
-//                     addChicken();
-//                 }, 3000);
-//                 licznik += Math.random() * 10;
-//             chickenElement.style.top = licznik + 'px';
-//             }
-
-//             if (licznik > maxTop ) {
-//                 removeChicken(currentElement);
-//                 licznik = -200;
-//             }
-
-
-
-//             return;
-//         }, 3000)
-
-
-//     }
-//     chickens()
-
-
-// Nie mam żadnego pomysłu jak dodać parę spadających obiektów, liczę na jakąś podpowiedź :).
+  
 
 
 
 
-
-
-
+let gameStarted = false
 let chickenClassName = ['chicken', 'chicken2', 'chicken3']
 let leftPosition = ['100px', '200px', '300px', '400px', '500px', '600px', '700px', '800px']
 
@@ -86,7 +44,7 @@ let removeChicken = (chicken, raf) => {
   chicken.position = 0
 }
 
-var pause = false;
+var pause = true;
 
 function Score(element) {
   this.score = 0;
@@ -125,8 +83,8 @@ let gameInterval = setInterval(() => {
     let catcherPosition = catcher.getPosition()
     if (moveChicken.position >= window.innerHeight - catcherPosition[0] - moveChicken.currentElement.offsetHeight) {
       if (
-        moveChicken.currentElement.offsetLeft >= catcherPosition[1] && 
-        moveChicken.currentElement.offsetLeft <= catcherPosition[2]
+        moveChicken.currentElement.offsetLeft > catcherPosition[1] && 
+        moveChicken.currentElement.offsetLeft < catcherPosition[2]
       ) {
         score.addPoints(1)
         removeChicken(moveChicken, moveChickenRAF_ID)
@@ -134,8 +92,8 @@ let gameInterval = setInterval(() => {
       }
       
       if (
-        moveChicken.currentElement.offsetLeft + moveChicken.currentElement.offsetWidth >= catcherPosition[1] && 
-        moveChicken.currentElement.offsetLeft + moveChicken.currentElement.offsetWidth <= catcherPosition[2]
+        moveChicken.currentElement.offsetLeft + moveChicken.currentElement.offsetWidth > catcherPosition[1] && 
+        moveChicken.currentElement.offsetLeft + moveChicken.currentElement.offsetWidth < catcherPosition[2]
       ){
         score.addPoints(1)
         removeChicken(moveChicken, moveChickenRAF_ID)
@@ -153,15 +111,15 @@ let gameInterval = setInterval(() => {
 
 }, timeOfShowNewElement )
 
-
-
-function Catcher(element){
-  this.element = element;
-  this.positionX = element.offsetLeft;
-  this.width = element.offsetWidth;
-  this.height = element.offsetHeight;
+class Catcher {
+  constructor (element) {
+    this.element = element;
+    this.positionX = element.offsetLeft;
+    this.width = element.offsetWidth;
+    this.height = element.offsetHeight;
+  }
   
-  this.getPosition = () => {
+  getPosition() {
     return [
       this.height,
       this.positionX,
@@ -169,26 +127,29 @@ function Catcher(element){
     ]
   }
 
-  this.moveLeft = () => {
-    if ( this.positionX - 50 > 0 ) {
+  moveLeft() {
+    if ( pause === true ) {
+      return
+    } else if ( this.positionX - 50 > 0 ) {
         this.positionX -= 50
         this.element.style.left = this.positionX + 'px'
     }
-  }
+  } 
 
-  this.moveRight = () => {
-    if ( this.positionX + this.width + 50 < window.innerWidth ) {
+  moveRight() {
+    if ( pause === true ) {
+      return
+    } else if ( this.positionX + this.width + 50 < window.innerWidth ) {
       this.positionX += 50
       this.element.style.left = this.positionX + 'px'
     }
   }
-}
 
+}
 const catcher = new Catcher(document.getElementById('catcher'));
 
 
 window.addEventListener("keydown", event => {
-
   if (event.keyCode === 37) {
     catcher.moveLeft();
   } else if ( event.keyCode === 39 ) {
@@ -196,35 +157,30 @@ window.addEventListener("keydown", event => {
   }
 });
 
+const clickPause = document.getElementById('pause');
 
-
-// 
-
-
-
-
-
-
-// (function moveChicken() {
-//   moveChicken.currentElement = moveChicken.currentElement || addChicken(Math.random()*2)
-//   moveChicken.position = moveChicken.position || 0
-//   moveChicken.maxHeight = moveChicken.maxHeight || window.innerHeight
-
-//   moveChicken.maxHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
-//   moveChicken.position += 5
-//   moveChicken.currentElement.style.top = moveChicken.position + 'px';
-// })()
-
-
-  // setInterval(() => {moveChicken()}, 30 )
+function pauseGame() {
+  if ( pause === true ) {
+    pause = false;
+    timer.start();
+  } else {
+    pause = true;
+    timer.stop();
+  }
+  }
 
 
 
-// var time = 0;
-// var timer = setInterval(function(){
-//   document.getElementById("time").value = 0 + time;
-//   time += 1;
-//   if(time <= 0)
-//     clearInterval(timer);
-//     console.log(time)
-// }, 1000);
+  const startButton = document.getElementById('startButton');
+
+  function startGame() {
+    if (!gameStarted ) {
+      timer.start();
+      pause = false;
+      gameStarted = true
+      document.getElementById('pause').removeAttribute('checked')
+    }
+  }
+      
+    
+  
