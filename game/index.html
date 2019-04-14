@@ -11,27 +11,17 @@
 <body>
 
     <!-- <div>time:<p id='time'>0</p></div> -->
-    
-    <div id="catcher"></div>
-  
-    
-    
-    <div class='timer__container'>
-            
-            <div id="points">0</div>
-            <div id='timer'>Time: 0</div>
-            <button id="startButton" onclick="startGame()">Start</button>
-            <button id="restartButton" onclick="resetGame()">Reset</button>
-        <label class='pauseButton'><input type="checkbox" checked onclick="pauseGame()" id="pause">Pause</label>    
-    </div>
-
-
-
-
-
-
-
-
+    <div class="game__container">
+        <div id="catcher"></div>
+        <div class='timer__container'>
+                
+                <div id="points">0</div>
+                <div id='timer'>Time: 0</div>
+                <button id="startButton" onclick="startGame()">Start</button>
+                <button id="restartButton" onclick="resetGame()">Reset</button>
+            <label class='pauseButton'><input type="checkbox" checked onclick="pauseGame()" id="pause">Pause</label>    
+        </div>
+</div>
 <script src="main.js"></script>
 </body>
 </html>
