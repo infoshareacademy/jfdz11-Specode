@@ -70,6 +70,7 @@ function Score(element) {
     this.element.innerHTML = this.score
   }
 }
+
 let timeOfShowNewElement = 1000;
 const score = new Score(document.getElementById('points'))
 
