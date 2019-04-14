@@ -35,11 +35,6 @@ let leftPosition = ['100px', '200px', '300px', '400px', '500px', '600px', '700px
 
   
 
-
-
-
-
-
 function addChicken(id) {
   chickenElement = document.createElement("div");
   chickenElement.classList.add(chickenClassName[(Math.round(Math.random() * 2))],'item');
@@ -79,15 +74,31 @@ function Score(element) {
 let timeOfShowNewElement = 1000;
 const score = new Score(document.getElementById('points'))
 
-let gameInterval = setInterval(() => {
+// setTimeout(function game() {
+//   console.log('elo, zwiekszam o polowe')
+//   timeOfShowNewElement = 100
+// }, 5000)
+
+let gameInterval = setTimeout(function game(){
   
   let moveChickenRAF_ID
 
-  if (pause) {
+
+  if (!gameStarted) {
+    timeOfShowNewElement = 1000
+    gameInterval = setTimeout(game, timeOfShowNewElement)
     return;
   }
+  if (pause) {
+  gameInterval = setTimeout(game, timeOfShowNewElement)
+  return;
+  }
+  
+ 
+  
 
   function moveChicken() {
+    
     moveChicken.currentElement = moveChicken.currentElement || addChicken(Math.random() * 2)
     moveChicken.position = moveChicken.position || 0
     moveChicken.maxHeight = moveChicken.maxHeight || window.innerHeight
@@ -125,9 +136,15 @@ let gameInterval = setInterval(() => {
     }
     requestAnimationFrame(moveChicken)
   }
+  
   moveChickenRAF_ID = requestAnimationFrame(moveChicken)
 
-}, timeOfShowNewElement )
+  if ( timer.time >= 2 ) {
+    timeOfShowNewElement = timeOfShowNewElement*0.97
+  }
+  gameInterval = setTimeout(game, timeOfShowNewElement)
+
+}, timeOfShowNewElement)
 
 class Catcher {
   constructor (element) {
@@ -178,6 +195,11 @@ window.addEventListener("keydown", event => {
 const clickPause = document.getElementById('pause');
 
 function pauseGame() {
+
+  if (!gameStarted) {
+    return;
+  }
+
   if ( pause === true ) {
     pause = false;
     timer.start();
@@ -210,7 +232,6 @@ function pauseGame() {
       });
       score.resetScore()
       gameStarted = false;
-
   }
 
   
