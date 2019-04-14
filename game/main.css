@@ -48,16 +48,6 @@ body {
 
 }
 
-.chicken4 {
-    height: 100px;
-    width: 100px;
-    background-image: url("carrot.png");
-    background-size: cover;
-    position: absolute;
-    top: 20px;
-
-}
-
 #catcher {
     position: absolute;
     height: 200px;
@@ -110,8 +100,8 @@ body {
     margin-top: 10px;
 }
 #timer {
-    width: 200px;
-    height: 50px;
+    width: 250px;
+    height: 35px;
     background-color: white;
     font-size: 2rem;
     display: flex;

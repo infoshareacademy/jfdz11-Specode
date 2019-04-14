@@ -42,7 +42,7 @@ let leftPosition = ['100px', '200px', '300px', '400px', '500px', '600px', '700px
 
 function addChicken(id) {
   chickenElement = document.createElement("div");
-  chickenElement.classList.add(chickenClassName[(Math.round(Math.random() * 2))]);
+  chickenElement.classList.add(chickenClassName[(Math.round(Math.random() * 2))],'item');
   chickenElement.id = id || '';
   chickenElement.style.left = leftPosition[(Math.round(Math.random() * 8))];
   document.querySelector("body").appendChild(chickenElement);
@@ -50,7 +50,7 @@ function addChicken(id) {
 }
 
 let removeChicken = (chicken, raf) => {
-  document.querySelector('body').removeChild(chicken.currentElement);
+  document.body.removeChild(chicken.currentElement);
   cancelAnimationFrame(raf)
   chicken.position = 0
 }
@@ -65,6 +65,11 @@ function Score(element) {
     return this.score
   }
 
+  this.resetScore = () => {
+    this.score = 0
+    this.element.innerHTML = this.score
+  }
+
   this.addPoints = (points) => {
     this.score += points
     this.element.innerHTML = this.score
@@ -75,6 +80,7 @@ let timeOfShowNewElement = 1000;
 const score = new Score(document.getElementById('points'))
 
 let gameInterval = setInterval(() => {
+  
   let moveChickenRAF_ID
 
   if (pause) {
@@ -181,16 +187,12 @@ function pauseGame() {
   }
   }
 
-
-
-  const startButton = document.getElementById('startButton');
-
   function startGame() {
     if (!gameStarted ) {
       timer.start();
       pause = false;
       gameStarted = true;
-      document.getElementById('pause').removeAttribute('checked');
+      document.getElementById('pause').checked = false;
     }
   }
       
@@ -203,7 +205,12 @@ function pauseGame() {
       timer.stop();
       timer.reset();
       document.getElementById('pause').checked = true;
-    //usuniecie score
-    //usuniecie elementow
-    //wlaczenie gry po kliknieciu start
+      document.querySelectorAll('.item').forEach(element => {
+        document.body.removeChild(element)
+      });
+      score.resetScore()
+      gameStarted = false;
+
   }
+
+  
