@@ -1,4 +1,10 @@
 
+
+let gameStarted = false
+let chickenClassName = ['chicken', 'chicken2', 'chicken3']
+let leftPosition = ['100px', '200px', '300px', '400px', '500px', '600px', '700px', '800px']
+
+
   class Timer {
     constructor(timerElement) {
       this.timerElement = timerElement;
@@ -16,8 +22,15 @@
     stop() {
       clearInterval(this.interval)
     }
-  }
+  
 
+    reset() {
+      this.time = 0;
+      this.timerElement.innerHTML = `Time: ${this.time.toFixed(2)}`;
+      
+      }
+    
+  }
   const timer = new Timer(document.getElementById('timer'));
 
   
@@ -25,9 +38,7 @@
 
 
 
-let gameStarted = false
-let chickenClassName = ['chicken', 'chicken2', 'chicken3']
-let leftPosition = ['100px', '200px', '300px', '400px', '500px', '600px', '700px', '800px']
+
 
 function addChicken(id) {
   chickenElement = document.createElement("div");
@@ -177,10 +188,21 @@ function pauseGame() {
     if (!gameStarted ) {
       timer.start();
       pause = false;
-      gameStarted = true
-      document.getElementById('pause').removeAttribute('checked')
+      gameStarted = true;
+      document.getElementById('pause').removeAttribute('checked');
     }
   }
       
     
-  
+  const restartButton = document.getElementById('restartButton');
+
+  function resetGame() {
+
+      pause = true;
+      timer.stop();
+      timer.reset();
+      document.getElementById('pause').checked = true;
+    //usuniecie score
+    //usuniecie elementow
+    //wlaczenie gry po kliknieciu start
+  }
