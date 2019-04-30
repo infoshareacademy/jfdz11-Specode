@@ -236,15 +236,21 @@ function pauseGame() {
   let infoMove = document.getElementById('info__container');
   function infoVisible() {
     infoMove.style.display = "block";
+    pause = true;
+    timer.stop();
   }
 
   function infoClose() {
     infoMove.style.display = "none";
+    pause = false;
+    timer.start();
   }
 
   window.onclick = function(event) {
     if (event.target == infoMove) {
       infoMove.style.display = "none";
+      pause = false;
+      timer.start();
     }
   }
   
