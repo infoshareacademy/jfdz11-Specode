@@ -19,7 +19,16 @@
                 <div id='timer'>Time: 0</div>
                 <button id="startButton" onclick="startGame()">Start</button>
                 <button id="restartButton" onclick="resetGame()">Reset</button>
-            <label class='pauseButton'><input type="checkbox" checked onclick="pauseGame()" id="pause">Pause</label>    
+                <label class='pauseButton'><input type="checkbox" checked onclick="pauseGame()" id="pause">Pause</label>    
+                <button id="info__button" onclick="infoVisible()">Info</button>
+        </div>
+
+        <div id="info__container" class="info__container">
+            <div class="info__text">
+                <div class="info__close" onclick="infoClose()">&times;</div>
+                <h2>Instrukcja gry</h2>
+                <p>Tekst instrukcji gry</p>
+            </div>
         </div>
 </div>
 <script src="main.js"></script>

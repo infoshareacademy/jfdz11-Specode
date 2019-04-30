@@ -99,6 +99,12 @@ body {
     justify-content: space-around;
     margin-top: 10px;
 }
+
+#info__button {
+    width: 50px;
+    height: 50px;
+}
+
 #timer {
     width: 250px;
     height: 35px;
@@ -118,4 +124,39 @@ body {
 #restartButton {
     width: 50px;
     height: 50px;
+}
+
+.info__container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 200px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.info__text {
+    background-color: rgb(255,255,255);
+    margin: auto;
+    border: 2px solid rgb(0, 161, 0);;
+    width: 80%;
+    text-align: center;
+    padding: 1%;
+}
+
+.info__close {
+    float: right;
+    color: rgb(0,0,0);
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.info__close:hover, .info__close:focus {
+    color: rgb(26, 127, 26);
+    text-decoration: none;
+    cursor: pointer;
 }

@@ -1,9 +1,8 @@
 
 
-let gameStarted = false
-let chickenClassName = ['chicken', 'chicken2', 'chicken3']
-let leftPosition = ['100px', '200px', '300px', '400px', '500px', '600px', '700px', '800px']
-
+let gameStarted = false;
+let chickenClassName = ['chicken', 'chicken2', 'chicken3'];
+let leftPosition = ['100px', '200px', '300px', '400px', '500px', '600px', '700px', '800px'];
 
   class Timer {
     constructor(timerElement) {
@@ -233,5 +232,21 @@ function pauseGame() {
       score.resetScore()
       gameStarted = false;
   }
+
+  let infoMove = document.getElementById('info__container');
+  function infoVisible() {
+    infoMove.style.display = "block";
+  }
+
+  function infoClose() {
+    infoMove.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    if (event.target == infoMove) {
+      infoMove.style.display = "none";
+    }
+  }
+  
 
   
