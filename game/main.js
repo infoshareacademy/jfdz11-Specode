@@ -1,5 +1,3 @@
-
-
 let gameStarted = false;
 let chickenClassName = ['chicken', 'chicken2', 'chicken3'];
 let leftPosition = ['100px', '200px', '300px', '400px', '500px', '600px', '700px', '800px'];
@@ -221,7 +219,6 @@ function pauseGame() {
   const restartButton = document.getElementById('restartButton');
 
   function resetGame() {
-
       pause = true;
       timer.stop();
       timer.reset();
@@ -233,24 +230,33 @@ function pauseGame() {
       gameStarted = false;
   }
 
+
+
   let infoMove = document.getElementById('info__container');
+  window.onload = function load() {
+    pause = true;
+    document.getElementById('pause').checked = true;
+    timer.stop();
+    infoMove.style.display = "block";
+  }
+
   function infoVisible() {
     infoMove.style.display = "block";
+    document.getElementById('pause').checked = true;
     pause = true;
     timer.stop();
   }
 
   function infoClose() {
+    startGame();
     infoMove.style.display = "none";
-    pause = false;
-    timer.start();
-  }
+  } 
+  
 
   window.onclick = function(event) {
     if (event.target == infoMove) {
+      startGame();
       infoMove.style.display = "none";
-      pause = false;
-      timer.start();
     }
   }
   
