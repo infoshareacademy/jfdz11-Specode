@@ -12,9 +12,15 @@
 
     <!-- <div>time:<p id='time'>0</p></div> -->
     <div class="game__container">
+        <div id="game__name" class="game__name">
+            <div class="name__text">
+                <span id="note">Podaj swoje imię</span>
+                <input type="text" id="name" name="name" placeholder="Imię">
+                <button type="submit" class="button" onclick="firstStart()">Zaczynamy grę!</button>
+            </div>
+        </div>
         <div id="catcher"></div>
         <div class='timer__container'>
-                
                 <div id="points">0</div>
                 <div id='timer'>Time: 0</div>
                 <button id="startButton" onclick="startGame()">Start</button>

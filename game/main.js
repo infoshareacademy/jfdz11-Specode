@@ -1,6 +1,7 @@
 let gameStarted = false;
 let chickenClassName = ['chicken', 'chicken2', 'chicken3'];
-let leftPosition = ['100px', '200px', '300px', '400px', '500px', '600px', '700px', '800px'];
+//let leftPosition = ['100px', '200px', '300px', '400px', '500px', '600px', '700px', '800px'];
+let leftPosition = ['10vw', '20vw', '30vw', '40vw', '50vw', '60vw', '70vw', '80vw','90w'];
 
   class Timer {
     constructor(timerElement) {
@@ -19,18 +20,13 @@ let leftPosition = ['100px', '200px', '300px', '400px', '500px', '600px', '700px
     stop() {
       clearInterval(this.interval)
     }
-  
 
     reset() {
       this.time = 0;
       this.timerElement.innerHTML = `Time: ${this.time.toFixed(2)}`;
-      
-      }
-    
+    }
   }
   const timer = new Timer(document.getElementById('timer'));
-
-  
 
 function addChicken(id) {
   chickenElement = document.createElement("div");
@@ -43,8 +39,8 @@ function addChicken(id) {
 
 let removeChicken = (chicken, raf) => {
   document.body.removeChild(chicken.currentElement);
-  cancelAnimationFrame(raf)
-  chicken.position = 0
+  cancelAnimationFrame(raf);
+  chicken.position = 0;
 }
 
 var pause = true;
@@ -90,9 +86,6 @@ let gameInterval = setTimeout(function game(){
   gameInterval = setTimeout(game, timeOfShowNewElement)
   return;
   }
-  
- 
-  
 
   function moveChicken() {
     
@@ -230,14 +223,29 @@ function pauseGame() {
       gameStarted = false;
   }
 
-
-
   let infoMove = document.getElementById('info__container');
-  window.onload = function load() {
+  let nameContainer = document.getElementById('game__name');
+  let nameButton = document.getElementById('name');
+
+  window.onload = function addName() {
     pause = true;
     document.getElementById('pause').checked = true;
     timer.stop();
-    infoMove.style.display = "block";
+    nameContainer.style.display = "flex";
+  }
+  
+  function firstStart() {
+    if (nameButton.value.length === 0) {
+      nameContainer.style.display = "flex";
+      document.getElementById('note').innerHTML = "Musisz podać swoje imię!";
+    }
+    else {
+      nameContainer.style.display = "none";
+      pause = true;
+      document.getElementById('pause').checked = true;
+      timer.stop();
+      infoMove.style.display = "block";
+    }
   }
 
   function infoVisible() {
