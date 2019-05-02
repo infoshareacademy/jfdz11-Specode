@@ -65,7 +65,6 @@ myText.addEventListener('click', myFunction);
   }
   }
 
-
   //querySelectorAll("#asdasd, .asdasd, #asd.casdasd")
   document.getElementById("asasd")
 
@@ -86,29 +85,19 @@ function safeData() {
   document.getElementById("Dane").innerHTML = "Zapewniamy o bezpieczeństwie przekazywanych danych.";
 }
 
-
-
 let variable = true;
 
 const test= function() {
   variable = !variable
 }
 
-
-
-
 test();test();test();test();test();test();
-
 
 let parent = document.querySelector('.menu-content-list');
 let parentLi = parent.querySelectorAll('li');
 let parentA = document.querySelectorAll('.menu-content-list a');
 
 parentLi[0].style.backgroundColor = '#34a51a';
-
-
-
-
 
 function changeMenuColor() {
 

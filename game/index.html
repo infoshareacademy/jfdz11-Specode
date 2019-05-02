@@ -12,11 +12,21 @@
 
     <!-- <div>time:<p id='time'>0</p></div> -->
     <div class="game__container">
+        <div id="email__game" class="email__game">
+                <div class="email__text" id="email__text">
+                    <div class="close__container">
+                        <div class="info__close" onclick="emailClose()">&times;</div>
+                    </div>
+                    <span id="email__note">Podaj swojego maila</span>
+                    <input type="email" id="email" name="email" placeholder="e-mail">
+                    <button type="submit" id="email__button" class="button" onclick="acceptEmail()">Zatwierdź!</button>
+                </div>
+        </div>
         <div id="game__name" class="game__name">
             <div class="name__text">
-                <span id="note">Podaj swoje imię</span>
+                <span id="name__note">Podaj swoje imię</span>
                 <input type="text" id="name" name="name" placeholder="Imię">
-                <button type="submit" class="button" onclick="firstStart()">Zaczynamy grę!</button>
+                <button type="submit" id="name__button" class="button" onclick="firstStart()">Zaczynamy grę!</button>
             </div>
         </div>
         <div id="catcher"></div>

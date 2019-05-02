@@ -223,11 +223,45 @@ function pauseGame() {
       gameStarted = false;
   }
 
-  let infoMove = document.getElementById('info__container');
   let nameContainer = document.getElementById('game__name');
+  let emailContainer = document.getElementById('email__game');
+  let infoMove = document.getElementById('info__container');
   let nameButton = document.getElementById('name');
+  let emailButton = document.getElementById('email');
+  let newName = document.getElementById('name__note');
+  let newEmail = document.getElementById('email__note');
 
-  window.onload = function addName() {
+  window.onload = function addEmail() {
+    pause = true;
+    document.getElementById('pause').checked = true;
+    timer.stop();
+    emailContainer.style.display = "flex";
+  }
+
+  function acceptEmail() {
+    if (emailButton.value.length === 0) {
+      emailContainer.style.display = "flex";
+      newEmail.innerHTML = "Musisz podać swojego maila";
+      newEmail.style.color = "red";
+    }
+    else {
+      emailContainer.style.display = "none";
+      nameContainer.style.display= "flex";
+    }
+  }
+
+  function emailClose() {
+    window.location.href = "../index.html";
+  } 
+
+  emailButton.addEventListener("keyup",function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      document.getElementById('email__button').click();
+    }
+  })
+
+function addName() {
     pause = true;
     document.getElementById('pause').checked = true;
     timer.stop();
@@ -237,7 +271,8 @@ function pauseGame() {
   function firstStart() {
     if (nameButton.value.length === 0) {
       nameContainer.style.display = "flex";
-      document.getElementById('note').innerHTML = "Musisz podać swoje imię!";
+      newName.innerHTML = "Musisz podać swoje imię!";
+      newName.style.color = "red";
     }
     else {
       nameContainer.style.display = "none";
@@ -247,6 +282,13 @@ function pauseGame() {
       infoMove.style.display = "block";
     }
   }
+
+  nameButton.addEventListener("keyup",function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      document.getElementById('name__button').click();
+    }
+  })
 
   function infoVisible() {
     infoMove.style.display = "block";
@@ -259,7 +301,6 @@ function pauseGame() {
     startGame();
     infoMove.style.display = "none";
   } 
-  
 
   window.onclick = function(event) {
     if (event.target == infoMove) {
@@ -267,6 +308,8 @@ function pauseGame() {
       infoMove.style.display = "none";
     }
   }
+
+
   
 
   

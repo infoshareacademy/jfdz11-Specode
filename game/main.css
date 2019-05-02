@@ -126,7 +126,7 @@ body {
     height: 50px;
 }
 
-.game__name {
+.game__name, .email__game {
     display: none;
     position: fixed;
     z-index: 1;
@@ -137,7 +137,6 @@ body {
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
-    display: flex;
     justify-content: center;
 }
 
@@ -153,17 +152,44 @@ body {
     border: 2px solid rgb(0, 161, 0);
 }
 
+.email__text {
+    width: 50%;
+    height: 25%;
+    display: flex;
+    padding: 0% 2% 2% 2%;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255,255,255);
+    border: 2px solid rgb(0, 161, 0);
+}
+
 input {
     width: 60%;
     border: none;
     border: 2px solid rgb(0, 161, 0);
     background-color: none;
+    border-radius: 0.5rem;
     line-height: 3;
     font-size: 1rem;
 }
 ::placeholder {
     color: rgb(0, 161, 0);
     text-align: center;
+}
+
+.button {
+    padding: 2.5%;
+    border-radius: 0.5rem;
+    text-align: center;
+    background-image: linear-gradient(-45deg,green, lightgreen, yellow);
+    color: black;
+    float: right;
+    box-shadow: 0 3px 3px 3px rgba(0,255,64,0.2);
+}
+
+.close__container {
+    width: 100%;
 }
 
 .info__container {
