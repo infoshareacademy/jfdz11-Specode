@@ -54,7 +54,7 @@ body {
     width: 200px;
     background-image: url("basket.png");
     background-size: cover;
-    max-width: 100%;
+    max-width: 80%;
     bottom: 0;
     left: 50px;
 }
