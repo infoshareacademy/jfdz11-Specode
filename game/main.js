@@ -248,6 +248,21 @@ function pauseGame() {
     newEmail.style.color = "red";
   }
 }
+/* Description
+
+1. The two forward-slashes /.../ contains a regexe.
+2. The leading ^ and trailing $ match the beginning and the ending of the input string, respectively. That is, the entire input string shall match with this regexe, instead of a part of the input string.
+3. \w+ matches 1 or more word characters (a-z, A-Z, 0-9 and underscore).
+4. [.-] matches character . or -. We need to use . to represent . as . has special meaning in regexe. The \ is known as the escape code, which restore the original literal meaning of the following character.
+5. [.-]? matches 0 or 1 occurrence of [.-].
+6. Again, \w+ matches 1 or more word characters.
+7. ([.-]?\w+)* matches 0 or more occurrences of [.-]?\w+.
+8. The sub-expression \w+([.-]?\w+)* is used to match the username in the email, before the @ sign. It begins with at least one word character (a-z, A-Z, 0-9 and underscore), followed by more word characters or . or -. However, a . or - must follow by a word character (a-z, A-Z, 0-9 and underscore). That is, the string cannot contain "..", "--", ".-" or "-.". Example of valid string are "a.1-2-3".
+9. The @ matches itself.
+10. Again, the sub-expression \w+([.-]?\w+)* is used to match the email domain name, with the same pattern as the username described above.
+11. The sub-expression .\w{2,3} matches a . followed by two or three word characters, e.g., ".com", ".edu", ".us", ".uk", ".co".
+12. (.\w{2,3})+ specifies that the above sub-expression shall occur one or more times, e.g., ".com", ".co.uk", ".edu.sg" etc.
+*/
 
   function emailClose() {
     window.location.href = "../index.html";
