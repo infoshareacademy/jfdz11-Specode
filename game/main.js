@@ -1,6 +1,5 @@
 let gameStarted = false;
 let chickenClassName = ['chicken', 'chicken2', 'chicken3'];
-//let leftPosition = ['100px', '200px', '300px', '400px', '500px', '600px', '700px', '800px'];
 let leftPosition = ['10vw', '25vw', '40vw', '55vw', '70vw', '85vw'];
 
   class Timer {
@@ -30,9 +29,9 @@ let leftPosition = ['10vw', '25vw', '40vw', '55vw', '70vw', '85vw'];
 
 function addChicken(id) {
   chickenElement = document.createElement("div");
-  chickenElement.classList.add(chickenClassName[(Math.round(Math.random() * 2))],'item');
+  chickenElement.classList.add(chickenClassName[(Math.round(Math.random() * 5))],'item');
   chickenElement.id = id || '';
-  chickenElement.style.left = leftPosition[(Math.round(Math.random() * 8))];
+  chickenElement.style.left = leftPosition[(Math.round(Math.random() * 5))];
   document.querySelector("body").appendChild(chickenElement);
   return chickenElement;
 }
@@ -89,7 +88,7 @@ let gameInterval = setTimeout(function game(){
 
   function moveChicken() {
     
-    moveChicken.currentElement = moveChicken.currentElement || addChicken(Math.random() * 2)
+    moveChicken.currentElement = moveChicken.currentElement || addChicken(Math.random() * 5)
     moveChicken.position = moveChicken.position || 0
     moveChicken.maxHeight = moveChicken.maxHeight || window.innerHeight
 
@@ -239,16 +238,16 @@ function pauseGame() {
   }
 
   function acceptEmail() {
-    if (emailButton.value.length === 0) {
-      emailContainer.style.display = "flex";
-      newEmail.innerHTML = "Musisz podać swojego maila";
-      newEmail.style.color = "red";
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailButton.value)) {
+    emailContainer.style.display = "none";
+    nameContainer.style.display= "flex";
     }
     else {
-      emailContainer.style.display = "none";
-      nameContainer.style.display= "flex";
-    }
+    emailContainer.style.display = "flex";
+    newEmail.innerHTML = "Musisz podać swojego maila";
+    newEmail.style.color = "red";
   }
+}
 
   function emailClose() {
     window.location.href = "../index.html";
@@ -308,7 +307,6 @@ function addName() {
       infoMove.style.display = "none";
     }
   }
-
 
   
 
