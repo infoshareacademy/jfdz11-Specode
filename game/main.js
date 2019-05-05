@@ -1,7 +1,7 @@
 let gameStarted = false;
 let chickenClassName = ['chicken', 'chicken2', 'chicken3'];
 //let leftPosition = ['100px', '200px', '300px', '400px', '500px', '600px', '700px', '800px'];
-let leftPosition = ['10vw', '20vw', '30vw', '40vw', '50vw', '60vw', '70vw', '80vw','90w'];
+let leftPosition = ['10vw', '25vw', '40vw', '55vw', '70vw', '85vw'];
 
   class Timer {
     constructor(timerElement) {
@@ -34,7 +34,7 @@ function addChicken(id) {
   chickenElement.id = id || '';
   chickenElement.style.left = leftPosition[(Math.round(Math.random() * 8))];
   document.querySelector("body").appendChild(chickenElement);
-  return chickenElement
+  return chickenElement;
 }
 
 let removeChicken = (chicken, raf) => {
@@ -155,8 +155,8 @@ class Catcher {
   moveLeft() {
     if ( pause === true ) {
       return
-    } else if ( this.positionX - 50 > 0 ) {
-        this.positionX -= 50
+    } else if ( this.positionX - 25 > 0 ) {
+        this.positionX -= 25
         this.element.style.left = this.positionX + 'px'
     }
   } 
@@ -164,8 +164,8 @@ class Catcher {
   moveRight() {
     if ( pause === true ) {
       return
-    } else if ( this.positionX + this.width + 50 < window.innerWidth ) {
-      this.positionX += 50
+    } else if ( this.positionX + this.width + 25 < window.innerWidth ) {
+      this.positionX += 25
       this.element.style.left = this.positionX + 'px'
     }
   }

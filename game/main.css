@@ -18,79 +18,70 @@ body {
     display: flex;
 }
 
-
 .chicken {
-    height: 100px;
-    width: 100px;
+    height: 40px;
+    width: 40px;
     background-image: url("chicken.png");
     background-size: cover;
     position: absolute;
-
 }
 
 .chicken2 {
-    height: 100px;
-    width: 100px;
+    height: 40px;
+    width: 40px;
     background-image: url("carrot.png");
     background-size: cover;
     position: absolute;
-    top: 20px;
-
 }
 
 .chicken3 {
-    height: 100px;
-    width: 100px;
+    height: 40px;
+    width: 40px;
     background-image: url("carrot.png");
     background-size: cover;
     position: absolute;
-    top: 20px;
-
 }
 
 #catcher {
     position: absolute;
-    height: 200px;
-    width: 200px;
+    height: 70px;
+    width: 70px;
     background-image: url("basket.png");
     background-size: cover;
-    max-width: 80%;
+    max-width: 100%;
     bottom: 0;
-    left: 50px;
 }
 
 #points {
     display: flex;
     justify-content: center;
     align-items: center;
-    left: 5%;
-    top: 5%;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     border-radius: 20%;
     background-color: rgb(59, 52, 52);
     color: rgb(255, 239, 239);
-    font-size: 50px;
+    font-size: 1.5rem;
 }
 
 .pauseButton {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    left: 90%;
-    top: 5%;
-    width: 75px;
-    height: 75px;
-    font-size: 2rem;
+    font-size: 1rem;
     color: black;
+    
 }
 
 .pauseButton input {
     position: relative;
     width: 100%;
     height: 100%;
-    padding: 50px;
+    width: 40px;
+    height: 40px;
+    margin: 0 0 0 0;
+    border-radius: 0.5rem;
+    background-color: white;
 }
 
 .timer__container {
@@ -98,39 +89,60 @@ body {
     display: flex;
     justify-content: space-around;
     margin-top: 10px;
+    z-index: 1;
 }
 
 #info__button {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
+    border-radius: 0.5rem;
+    background-color: white;
+    font-size: 0.7rem;
+    text-align: center;
+    padding: 0;
+}
+
+.timer__outside {
+    height: 40px;
+    background-color: white;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    text-align: center;
 }
 
 #timer {
-    width: 250px;
-    height: 35px;
-    background-color: white;
-    font-size: 2rem;
-    display: flex;
-    justify-content: center;
-    z-index: 2;
+    padding: 2%;
+    font-size: 0.8rem
 }
 
 #startButton {
-    width: 50px;
-    height: 50px
-
+    width: 40px;
+    height: 40px;
+    border-radius: 0.5rem;
+    background-color: white;
+    font-size: 0.7rem;
+    text-align: center;
+    padding: 0;
 }
 
 #restartButton {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 0.5rem;
+    background-color: white;
+    font-size: 0.7rem;
+    text-align: center;
 }
 
 .game__name, .email__game {
     display: none;
     position: fixed;
-    z-index: 1;
-    padding-top: 200px;
+    z-index: 2;
+    padding-top: 40vw;
     left: 0;
     top: 0;
     width: 100%;
@@ -141,7 +153,7 @@ body {
 }
 
 .name__text {
-    width: 50%;
+    width: 80%;
     height: 20%;
     display: flex;
     padding: 2%;
@@ -153,7 +165,7 @@ body {
 }
 
 .email__text {
-    width: 50%;
+    width: 80%;
     height: 25%;
     display: flex;
     padding: 0% 2% 2% 2%;
@@ -165,13 +177,11 @@ body {
 }
 
 input {
-    width: 60%;
-    border: none;
+    width: 70%;
     border: 2px solid rgb(0, 161, 0);
     background-color: none;
     border-radius: 0.5rem;
     line-height: 3;
-    font-size: 1rem;
 }
 ::placeholder {
     color: rgb(0, 161, 0);
@@ -195,8 +205,8 @@ input {
 .info__container {
     display: none;
     position: fixed;
-    z-index: 1;
-    padding-top: 200px;
+    z-index: 2;
+    padding-top: 40vw;
     left: 0;
     top: 0;
     width: 100%;
@@ -217,7 +227,7 @@ input {
 .info__close {
     float: right;
     color: rgb(0,0,0);
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: bold;
 }
 
@@ -225,4 +235,148 @@ input {
     color: rgb(26, 127, 26);
     text-decoration: none;
     cursor: pointer;
+}
+
+@media (min-width: 568px) {
+
+    .chicken, .chicken2, .chicken3 {
+        height: 50px;
+        width: 50px;
+    }
+    
+    #catcher {
+        height: 100px;
+        width: 100px;
+    }
+    
+    #points {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+    
+    .pauseButton, #startButton, #restartButton {
+        font-size: 1rem;
+    }
+    
+    .pauseButton input {
+        width: 60px;
+        height: 60px;
+    }
+
+    #info__button {
+        width: 60px;
+        height: 60px;
+        font-size: 1rem;
+    }
+    
+    .timer__outside {
+        height: 60px;
+    }
+
+    #timer {
+        font-size: 1rem
+    }
+    
+    .game__name, .email__game, .info__container {
+        padding-top: 40vw;
+    }
+} 
+
+@media (min-width: 750px) {
+    .chicken, .chicken2, .chicken3 {
+        height: 60px;
+        width: 60px;
+    }
+    
+    #catcher {
+        height: 150px;
+        width: 150px;
+    }
+    
+    #points {
+        width: 90px;
+        height: 90px;
+        font-size: 3rem;
+    }
+    
+    .pauseButton {
+        font-size: 1.2rem;
+    }
+    
+    .pauseButton input {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .timer__outside {
+        height: 60px;
+    }
+
+    #timer {
+        font-size: 1.2rem
+    }
+    
+    #startButton, #restartButton,  #info__button {
+        width: 60px;
+        height: 60px;
+        font-size: 1rem;
+    }
+    
+    .game__name, .email__game, .info__container {
+        padding-top: 20vw;
+    }
+    
+    .name__text, .email__text {
+        width: 70%;
+    }
+    
+    input, .info__text {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .chicken, .chicken2, .chicken3 {
+        height: 90px;
+        width: 90px;
+    }
+    
+    #catcher {
+        height: 200px;
+        width: 200px;
+    }
+    
+    #points {
+        width: 120px;
+        height: 120px;
+        font-size: 3rem;
+    }
+    
+    .pauseButton {
+        font-size: 1.5rem;
+    }
+    
+    .pauseButton input {
+        width: 70px;
+        height: 70px;
+    }
+
+    #info__button, #startButton, #restartButton{
+        width: 70px;
+        height: 70px;
+        font-size: 1.2rem;
+    }
+    
+    .timer__outside {
+        height: 70px;
+    }
+
+    #timer {
+        font-size: 1.2rem
+    }
+    
+    .name__text, .email__text {
+        width: 50%;
+    }
 }
