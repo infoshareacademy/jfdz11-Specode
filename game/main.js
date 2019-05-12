@@ -48,17 +48,21 @@ function Score(element) {
   this.score = 0;
   this.element = element;
   
-  this.getScore = () => {
-    return this.score
-  }
+  // this.getScore = () => {
+  //   return this.score    // this code is required for something? 
+  // }
 
   this.resetScore = () => {
-    this.score = 0
+    this.score = 0                      // function determine how many points will be set after click on reset button
     this.element.innerHTML = this.score
   }
 
   this.addPoints = (points) => {
-    this.score += points
+    this.score += points              // add Score point
+    this.element.innerHTML = this.score //without this line Score point will not work fine because function innerHTML get value and add to HTML
+  }
+  this.removePoints = (points) => {
+    this.score -= points              // remove Score point
     this.element.innerHTML = this.score
   }
 }
@@ -87,7 +91,6 @@ let gameInterval = setTimeout(function game(){
   }
 
   function moveChicken() {
-    
     moveChicken.currentElement = moveChicken.currentElement || addChicken(Math.random() * 5)
     moveChicken.position = moveChicken.position || 0
     moveChicken.maxHeight = moveChicken.maxHeight || window.innerHeight
@@ -99,23 +102,29 @@ let gameInterval = setTimeout(function game(){
     }
 
     let catcherPosition = catcher.getPosition()
+    
     if (moveChicken.position >= window.innerHeight - catcherPosition[0] - moveChicken.currentElement.offsetHeight) {
       if (
-        moveChicken.currentElement.offsetLeft > catcherPosition[1] && 
+        moveChicken.currentElement.offsetLeft > catcherPosition[1] && //determine right side of basket
         moveChicken.currentElement.offsetLeft < catcherPosition[2]
       ) {
+        if (moveChicken.currentElement.className = 'chicken') {
+          console.log(moveChicken.currentElement);  
         score.addPoints(1)
         removeChicken(moveChicken, moveChickenRAF_ID)
         return;
+        }
       }
       
       if (
-        moveChicken.currentElement.offsetLeft + moveChicken.currentElement.offsetWidth > catcherPosition[1] && 
+        moveChicken.currentElement.offsetLeft + moveChicken.currentElement.offsetWidth > catcherPosition[1] &&  // determine left side of basket
         moveChicken.currentElement.offsetLeft + moveChicken.currentElement.offsetWidth < catcherPosition[2]
       ){
-        score.addPoints(1)
-        removeChicken(moveChicken, moveChickenRAF_ID)
-        return
+        if (moveChicken.currentElement.className = 'chicken') {
+          score.addPoints(1)
+          removeChicken(moveChicken, moveChickenRAF_ID)
+          return
+        }
       }
     }
 
