@@ -1,6 +1,6 @@
 let gameStarted = false;
 let typesOfFallingObjects = ["chicken", "chicken2", "chicken3"];
-let leftPosition = ["10vw", "25vw", "40vw", "55vw", "70vw", "85vw"];
+let positionOfFallingObject = ["15vw", "25vw", "40vw", "55vw", "70vw", "85vw"];
 
 class Timer {
   constructor(timerElement) {
@@ -34,7 +34,7 @@ function addChicken(id) {
     "item"
   );
   chickenElement.id = id || "";
-  chickenElement.style.left = leftPosition[getRandomObject()];
+  chickenElement.style.left = positionOfFallingObject[getRandomOfFallingObject()];
   document.querySelector("body").appendChild(chickenElement);
   return chickenElement;
 }
@@ -76,6 +76,9 @@ const score = new Score(document.getElementById("points"));
 
 function getRandomObject() {
   return Math.round(Math.random() * typesOfFallingObjects.length - 1);
+}
+function getRandomOfFallingObject() {
+  return Math.round(Math.random() * positionOfFallingObject.length - 1);
 }
 
 let gameInterval = setTimeout(function game() {
@@ -142,7 +145,7 @@ let gameInterval = setTimeout(function game() {
   moveChickenRAF_ID = requestAnimationFrame(loop);
 
   if (timer.time >= 2) {
-    timeOfShowNewElement = timeOfShowNewElement * 0.97;
+    timeOfShowNewElement = timeOfShowNewElement * 0.99;
   }
   gameInterval = setTimeout(game, timeOfShowNewElement);
 }, timeOfShowNewElement);
