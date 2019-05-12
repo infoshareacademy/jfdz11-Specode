@@ -91,62 +91,55 @@ let gameInterval = setTimeout(function game() {
     return;
   }
 
-  function moveChicken() {
+  function loop() {
     const indexOfCurrentElement = getRandomObject();
-    moveChicken.currentElement = moveChicken.currentElement || addChicken();
-    moveChicken.position = moveChicken.position || 0;
-    moveChicken.maxHeight = moveChicken.maxHeight || window.innerHeight;
+    loop.currentElement = loop.currentElement || addChicken();
+    loop.position = loop.position || 0;
+    loop.maxHeight = loop.maxHeight || window.innerHeight;
 
     if (!pause) {
-      moveChicken.maxHeight = Math.max(
+      loop.maxHeight = Math.max(
         document.documentElement.clientHeight,
         window.innerHeight || 0
       );
-      moveChicken.position += 5;
-      moveChicken.currentElement.style.top = moveChicken.position + "px";
+      loop.position += 5;
+      loop.currentElement.style.top = loop.position + "px";
     }
 
     let catcherPosition = catcher.getPosition();
     if (
-      moveChicken.position >=
-      window.innerHeight -
-        catcherPosition[0] -
-        moveChicken.currentElement.offsetHeight
+      loop.position >=
+      window.innerHeight - catcherPosition[0] - loop.currentElement.offsetHeight
     ) {
       if (
-        moveChicken.currentElement.offsetLeft > catcherPosition[1] &&
-        moveChicken.currentElement.offsetLeft < catcherPosition[2]
+        loop.currentElement.offsetLeft > catcherPosition[1] &&
+        loop.currentElement.offsetLeft < catcherPosition[2]
       ) {
         score.addPoints(1);
-        removeChicken(moveChicken, moveChickenRAF_ID);
+        removeChicken(loop, moveChickenRAF_ID);
         return;
       }
 
       if (
-        moveChicken.currentElement.offsetLeft +
-          moveChicken.currentElement.offsetWidth >
+        loop.currentElement.offsetLeft + loop.currentElement.offsetWidth >
           catcherPosition[1] &&
-        moveChicken.currentElement.offsetLeft +
-          moveChicken.currentElement.offsetWidth <
+        loop.currentElement.offsetLeft + loop.currentElement.offsetWidth <
           catcherPosition[2]
       ) {
         score.addPoints(1);
-        removeChicken(moveChicken, moveChickenRAF_ID);
+        removeChicken(loop, moveChickenRAF_ID);
         return;
       }
     }
 
-    if (
-      moveChicken.position >
-      moveChicken.maxHeight - moveChicken.currentElement.clientHeight
-    ) {
-      removeChicken(moveChicken, moveChickenRAF_ID);
+    if (loop.position > loop.maxHeight - loop.currentElement.clientHeight) {
+      removeChicken(loop, moveChickenRAF_ID);
       return;
     }
-    requestAnimationFrame(moveChicken);
+    requestAnimationFrame(loop);
   }
 
-  moveChickenRAF_ID = requestAnimationFrame(moveChicken);
+  moveChickenRAF_ID = requestAnimationFrame(loop);
 
   if (timer.time >= 2) {
     timeOfShowNewElement = timeOfShowNewElement * 0.97;
