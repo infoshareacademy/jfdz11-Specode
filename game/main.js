@@ -1,5 +1,5 @@
 let gameStarted = false;
-let chickenClassName = ["chicken", "chicken2", "chicken3"];
+let typesOfFallingObjects = ["chicken", "chicken2", "chicken3"];
 let leftPosition = ["10vw", "25vw", "40vw", "55vw", "70vw", "85vw"];
 
 class Timer {
@@ -30,11 +30,11 @@ const timer = new Timer(document.getElementById("timer"));
 function addChicken(id) {
   chickenElement = document.createElement("div");
   chickenElement.classList.add(
-    chickenClassName[Math.round(Math.random() * 5)],
+    typesOfFallingObjects[getRandomObject()],
     "item"
   );
   chickenElement.id = id || "";
-  chickenElement.style.left = leftPosition[Math.round(Math.random() * 5)];
+  chickenElement.style.left = leftPosition[getRandomObject()];
   document.querySelector("body").appendChild(chickenElement);
   return chickenElement;
 }
@@ -74,6 +74,10 @@ const score = new Score(document.getElementById("points"));
 //   timeOfShowNewElement = 100
 // }, 5000)
 
+function getRandomObject() {
+  return Math.round(Math.random() * typesOfFallingObjects.length - 1);
+}
+
 let gameInterval = setTimeout(function game() {
   let moveChickenRAF_ID;
 
@@ -88,8 +92,8 @@ let gameInterval = setTimeout(function game() {
   }
 
   function moveChicken() {
-    moveChicken.currentElement =
-      moveChicken.currentElement || addChicken(Math.random() * 5);
+    const indexOfCurrentElement = getRandomObject();
+    moveChicken.currentElement = moveChicken.currentElement || addChicken();
     moveChicken.position = moveChicken.position || 0;
     moveChicken.maxHeight = moveChicken.maxHeight || window.innerHeight;
 
