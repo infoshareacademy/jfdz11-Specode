@@ -24,6 +24,7 @@ class Timer {
     this.time = 0;
     this.timerElement.innerHTML = `Time: ${this.time.toFixed(2)}`;
   }
+  
 }
 const timer = new Timer(document.getElementById("timer"));
 
@@ -73,14 +74,10 @@ function Score(element) {
 let timeOfShowNewElement = 1000;
 const score = new Score(document.getElementById("points"));
 
-// setTimeout(function game() {
-//   console.log('elo, zwiekszam o polowe')
-//   timeOfShowNewElement = 100
-// }, 5000)
-
 function getRandomObject() {
   return Math.round(Math.random() * typesOfFallingObjects.length - 1);
 }
+
 function getRandomOfFallingObject() {
   return Math.round(Math.random() * positionOfFallingObject.length - 1);
 }
@@ -99,7 +96,7 @@ let gameInterval = setTimeout(function game() {
   }
 
   function loop() {
-
+    stopGame();
     loop.currentElement = loop.currentElement || addChicken();
     loop.position = loop.position || 0;
     loop.maxHeight = loop.maxHeight || window.innerHeight;
@@ -121,34 +118,34 @@ let gameInterval = setTimeout(function game() {
       if (
         loop.currentElement.offsetLeft > catcherPosition[1] &&
         loop.currentElement.offsetLeft < catcherPosition[2]
-      ) { 
-        if (loop.currentElement.classList.contains('chicken')){
+      ) {
+        if (loop.currentElement.classList.contains('chicken')) {
           score.removePoints(1)
-          removeChicken(loop, moveChickenRAF_ID); 
+          removeChicken(loop, moveChickenRAF_ID);
           return;
         }
-        if(loop.currentElement.classList.contains('carrot')){
+        if (loop.currentElement.classList.contains('carrot')) {
           score.addPoints(1)
-          removeChicken(loop, moveChickenRAF_ID); 
-          return;  
+          removeChicken(loop, moveChickenRAF_ID);
+          return;
         }
       }
 
       if (
         loop.currentElement.offsetLeft + loop.currentElement.offsetWidth >
-          catcherPosition[1] &&
+        catcherPosition[1] &&
         loop.currentElement.offsetLeft + loop.currentElement.offsetWidth <
-          catcherPosition[2]
+        catcherPosition[2]
       ) {
-        if (loop.currentElement.classList.contains('chicken')){
+        if (loop.currentElement.classList.contains('chicken')) {
           score.removePoints(1)
-          removeChicken(loop, moveChickenRAF_ID); 
+          removeChicken(loop, moveChickenRAF_ID);
           return;
         }
-        if(loop.currentElement.classList.contains('carrot')){
+        if (loop.currentElement.classList.contains('carrot')) {
           score.addPoints(1)
-          removeChicken(loop, moveChickenRAF_ID); 
-          return;  
+          removeChicken(loop, moveChickenRAF_ID);
+          return;
         }
       }
     }
@@ -247,6 +244,21 @@ function resetGame() {
   gameStarted = false;
 }
 
+function stopGame(){
+  if (timer.time >= 5){
+    console.log(timer.time);
+    pause = true;
+    timer.stop();
+    timer.reset();
+    document.getElementById("pause").checked = true;
+    document.querySelectorAll(".item").forEach(element => {
+      document.body.removeChild(element);
+    });
+    score.resetScore();
+    gameStarted = false;
+  }
+}
+
 let nameContainer = document.getElementById("game__name");
 let emailContainer = document.getElementById("email__game");
 let infoMove = document.getElementById("info__container");
@@ -292,7 +304,7 @@ function emailClose() {
   window.location.href = "../index.html";
 }
 
-emailButton.addEventListener("keyup", function(event) {
+emailButton.addEventListener("keyup", function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
     document.getElementById("email__button").click();
@@ -320,7 +332,7 @@ function firstStart() {
   }
 }
 
-nameButton.addEventListener("keyup", function(event) {
+nameButton.addEventListener("keyup", function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
     document.getElementById("name__button").click();
@@ -339,7 +351,7 @@ function infoClose() {
   infoMove.style.display = "none";
 }
 
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target == infoMove) {
     startGame();
     infoMove.style.display = "none";
