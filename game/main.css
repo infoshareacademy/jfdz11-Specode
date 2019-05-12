@@ -26,15 +26,7 @@ body {
     position: absolute;
 }
 
-.chicken2 {
-    height: 40px;
-    width: 40px;
-    background-image: url("carrot.png");
-    background-size: cover;
-    position: absolute;
-}
-
-.chicken3 {
+.carrot {
     height: 40px;
     width: 40px;
     background-image: url("carrot.png");
@@ -239,7 +231,7 @@ input {
 
 @media (min-width: 568px) {
 
-    .chicken, .chicken2, .chicken3 {
+    .chicken, .carrot {
         height: 50px;
         width: 50px;
     }
@@ -284,7 +276,7 @@ input {
 } 
 
 @media (min-width: 750px) {
-    .chicken, .chicken2, .chicken3 {
+    .chicken, .carrot {
         height: 60px;
         width: 60px;
     }
@@ -337,7 +329,7 @@ input {
 }
 
 @media (min-width: 1024px) {
-    .chicken, .chicken2, .chicken3 {
+    .chicken, .carrot {
         height: 90px;
         width: 90px;
     }

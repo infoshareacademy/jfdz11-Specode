@@ -1,5 +1,5 @@
 let gameStarted = false;
-let typesOfFallingObjects = ["chicken", "chicken2", "chicken3"];
+let typesOfFallingObjects = ["chicken", "carrot", "carrot"];
 let positionOfFallingObject = ["15vw", "25vw", "40vw", "55vw", "70vw", "85vw"];
 
 class Timer {
@@ -60,8 +60,12 @@ function Score(element) {
     this.element.innerHTML = this.score;
   };
 
-  this.addPoints = points => {
-    this.score += points;
+  this.addPoints = point => {
+    this.score += point;
+    this.element.innerHTML = this.score;
+  };
+  this.removePoints = point => {
+    this.score -= point * 3;
     this.element.innerHTML = this.score;
   };
 }
@@ -95,7 +99,7 @@ let gameInterval = setTimeout(function game() {
   }
 
   function loop() {
-    const indexOfCurrentElement = getRandomObject();
+
     loop.currentElement = loop.currentElement || addChicken();
     loop.position = loop.position || 0;
     loop.maxHeight = loop.maxHeight || window.innerHeight;
@@ -117,10 +121,17 @@ let gameInterval = setTimeout(function game() {
       if (
         loop.currentElement.offsetLeft > catcherPosition[1] &&
         loop.currentElement.offsetLeft < catcherPosition[2]
-      ) {
-        score.addPoints(1);
-        removeChicken(loop, moveChickenRAF_ID);
-        return;
+      ) { 
+        if (loop.currentElement.classList.contains('chicken')){
+          score.removePoints(1)
+          removeChicken(loop, moveChickenRAF_ID); 
+          return;
+        }
+        if(loop.currentElement.classList.contains('carrot')){
+          score.addPoints(1)
+          removeChicken(loop, moveChickenRAF_ID); 
+          return;  
+        }
       }
 
       if (
@@ -129,9 +140,16 @@ let gameInterval = setTimeout(function game() {
         loop.currentElement.offsetLeft + loop.currentElement.offsetWidth <
           catcherPosition[2]
       ) {
-        score.addPoints(1);
-        removeChicken(loop, moveChickenRAF_ID);
-        return;
+        if (loop.currentElement.classList.contains('chicken')){
+          score.removePoints(1)
+          removeChicken(loop, moveChickenRAF_ID); 
+          return;
+        }
+        if(loop.currentElement.classList.contains('carrot')){
+          score.addPoints(1)
+          removeChicken(loop, moveChickenRAF_ID); 
+          return;  
+        }
       }
     }
 
