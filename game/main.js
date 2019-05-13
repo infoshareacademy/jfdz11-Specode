@@ -24,7 +24,7 @@ class Timer {
     this.time = 0;
     this.timerElement.innerHTML = `Time: ${this.time.toFixed(2)}`;
   }
-  
+
 }
 const timer = new Timer(document.getElementById("timer"));
 
@@ -244,9 +244,8 @@ function resetGame() {
   gameStarted = false;
 }
 
-function stopGame(){
-  if (timer.time >= 5){
-    console.log(timer.time);
+function stopGame() {
+  if (timer.time >= 25) {
     pause = true;
     timer.stop();
     timer.reset();
@@ -260,51 +259,36 @@ function stopGame(){
 }
 
 let nameContainer = document.getElementById("game__name");
-let emailContainer = document.getElementById("email__game");
-let infoMove = document.getElementById("info__container");
-let nameButton = document.getElementById("name");
-let emailButton = document.getElementById("email");
-let newName = document.getElementById("name__note");
-let newEmail = document.getElementById("email__note");
+let formContainer = document.getElementById("form__container");
+let infoContainer = document.getElementById("info__container");
+let nameInput = document.getElementById("name");
+let emailInput = document.getElementById("email");
+let nameLabel = document.getElementById("name__label");
+let emailLabel = document.getElementById("email__label");
 
-window.onload = function addEmail() {
+window.onload = function showBoxWithEmail() {
   pause = true;
   document.getElementById("pause").checked = true;
   timer.stop();
-  emailContainer.style.display = "flex";
+  formContainer.style.display = "flex";
 };
 
 function acceptEmail() {
-  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailButton.value)) {
-    emailContainer.style.display = "none";
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailInput.value)) {
+    formContainer.style.display = "none";
     nameContainer.style.display = "flex";
   } else {
-    emailContainer.style.display = "flex";
-    newEmail.innerHTML = "Musisz podać swojego maila";
-    newEmail.style.color = "red";
+    formContainer.style.display = "flex";
+    emailLabel.innerHTML = "Musisz podać swojego maila";
+    emailLabel.style.color = "red";
   }
 }
-/* Description
-
-1. The two forward-slashes /.../ contains a regexe.
-2. The leading ^ and trailing $ match the beginning and the ending of the input string, respectively. That is, the entire input string shall match with this regexe, instead of a part of the input string.
-3. \w+ matches 1 or more word characters (a-z, A-Z, 0-9 and underscore).
-4. [.-] matches character . or -. We need to use . to represent . as . has special meaning in regexe. The \ is known as the escape code, which restore the original literal meaning of the following character.
-5. [.-]? matches 0 or 1 occurrence of [.-].
-6. Again, \w+ matches 1 or more word characters.
-7. ([.-]?\w+)* matches 0 or more occurrences of [.-]?\w+.
-8. The sub-expression \w+([.-]?\w+)* is used to match the username in the email, before the @ sign. It begins with at least one word character (a-z, A-Z, 0-9 and underscore), followed by more word characters or . or -. However, a . or - must follow by a word character (a-z, A-Z, 0-9 and underscore). That is, the string cannot contain "..", "--", ".-" or "-.". Example of valid string are "a.1-2-3".
-9. The @ matches itself.
-10. Again, the sub-expression \w+([.-]?\w+)* is used to match the email domain name, with the same pattern as the username described above.
-11. The sub-expression .\w{2,3} matches a . followed by two or three word characters, e.g., ".com", ".edu", ".us", ".uk", ".co".
-12. (.\w{2,3})+ specifies that the above sub-expression shall occur one or more times, e.g., ".com", ".co.uk", ".edu.sg" etc.
-*/
 
 function emailClose() {
   window.location.href = "../index.html";
 }
 
-emailButton.addEventListener("keyup", function (event) {
+emailInput.addEventListener("keyup", function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
     document.getElementById("email__button").click();
@@ -319,28 +303,28 @@ function addName() {
 }
 
 function firstStart() {
-  if (nameButton.value.length === 0) {
+  if (nameInput.value.length === 0) {
     nameContainer.style.display = "flex";
-    newName.innerHTML = "Musisz podać swoje imię!";
-    newName.style.color = "red";
+    nameLabel.innerHTML = "Musisz podać swoje imię!";
+    nameLabel.style.color = "red";
   } else {
     nameContainer.style.display = "none";
     pause = true;
     document.getElementById("pause").checked = true;
     timer.stop();
-    infoMove.style.display = "block";
+    infoContainer.style.display = "block";
   }
 }
 
-nameButton.addEventListener("keyup", function (event) {
+nameInput.addEventListener("keyup", function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
-    document.getElementById("name__button").click();
+    firstStart();
   }
 });
 
 function infoVisible() {
-  infoMove.style.display = "block";
+  infoContainer.style.display = "block";
   document.getElementById("pause").checked = true;
   pause = true;
   timer.stop();
@@ -348,12 +332,12 @@ function infoVisible() {
 
 function infoClose() {
   startGame();
-  infoMove.style.display = "none";
+  infoContainer.style.display = "none";
 }
 
 window.onclick = function (event) {
-  if (event.target == infoMove) {
+  if (event.target == infoContainer) {
     startGame();
-    infoMove.style.display = "none";
+    infoContainer.style.display = "none";
   }
 };

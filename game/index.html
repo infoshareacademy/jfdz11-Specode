@@ -1,55 +1,60 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    
+
 </head>
+
 <body>
 
     <!-- <div>time:<p id='time'>0</p></div> -->
     <div class="game__container">
-        <div id="email__game" class="email__game">
-                <div class="email__text" id="email__text">
-                    <div class="close__container">
-                        <div class="info__close" onclick="emailClose()">&times;</div>
-                    </div>
-                    <span id="email__note">Podaj swojego maila</span>
-                    <input type="email" id="email" name="email" placeholder="e-mail">
-                    <button type="submit" id="email__button" class="button" onclick="acceptEmail()">Zatwierdź!</button>
+        <div id="form__container" class="form__container">
+            <div class="email__text" id="email__text">
+                <div class="close__container">
+                    <div class="info__close" onclick="emailClose()">&times;</div>
                 </div>
+                <label id="email__label" for="name">Podaj swojego maila</label>
+                <input type="email" id="email" name="email" placeholder="e-mail">
+                <button type="submit" id="email__button" class="button" onclick="acceptEmail()">Zatwierdź!</button>
+            </div>
         </div>
         <div id="game__name" class="game__name">
             <div class="name__text">
-                <span id="name__note">Podaj swoje imię</span>
+                <label id="name__label" for="name">Podaj swoje imię</label>
                 <input type="text" id="name" name="name" placeholder="Imię">
                 <button type="submit" id="name__button" class="button" onclick="firstStart()">Zaczynamy grę!</button>
             </div>
         </div>
         <div id="catcher"></div>
         <div class='timer__container'>
-                <div id="points">0</div>
-                <div class="timer__outside">
-                    <div id='timer'>Time: 0</div>
-                </div>    
-                <button id="startButton" onclick="startGame()">Start</button>
-                <button id="restartButton" onclick="resetGame()">Reset</button>
-                <label class='pauseButton'><input type="checkbox" checked onclick="pauseGame()" id="pause">Pause</label>    
-                <button id="info__button" onclick="infoVisible()">Info</button>
+            <div id="points">0</div>
+            <div class="timer__outside">
+                <div id='timer'>Time: 0</div>
+            </div>
+            <button id="startButton" onclick="startGame()">Start</button>
+            <button id="restartButton" onclick="resetGame()">Reset</button>
+            <label class='pauseButton'><input type="checkbox" checked onclick="pauseGame()" id="pause">Pause</label>
+            <button id="info__button" onclick="infoVisible()">Info</button>
         </div>
 
         <div id="info__container" class="info__container">
             <div class="info__text">
                 <div class="info__close" onclick="infoClose()">&times;</div>
                 <h2>Instrukcja gry</h2>
-                <p>Zdobądź jak najwięcej punktów. Za każdą marchewkę zebraną do koszyka gracz otrzymuje 1 punkt. Uważaj na spadające pieczone kurczaki. Są niezdrowe i nie chcesz ich w swoim koszyku. Za każdego złapanego kurczaka odejmowany jest 1 punkt.</p>
+                <p>Zdobądź jak najwięcej punktów. Za każdą marchewkę zebraną do koszyka gracz otrzymuje 1 punkt. Uważaj
+                    na spadające pieczone kurczaki. Są niezdrowe i nie chcesz ich w swoim koszyku. Za każdego złapanego
+                    kurczaka odejmowany jest 1 punkt.</p>
                 <p>Powodzenia</p>
             </div>
         </div>
-</div>
-<script src="main.js"></script>
+    </div>
+    <script src="main.js"></script>
 </body>
+
 </html>

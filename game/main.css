@@ -7,6 +7,11 @@ body {
     display: flex;
 }
 
+html {
+    line-height: 1.2;
+    font-size: rem(16);
+}
+
 .game__container {
     margin: 0;
     width: 100%;
@@ -131,7 +136,7 @@ body {
 }
 
 .game__name,
-.email__game {
+.form__container {
     display: none;
     position: fixed;
     z-index: 2;
@@ -277,7 +282,7 @@ input {
     }
 
     .game__name,
-    .email__game,
+    .form__container,
     .info__container {
         padding-top: 40vw;
     }
@@ -328,7 +333,7 @@ input {
     }
 
     .game__name,
-    .email__game,
+    .form__container,
     .info__container {
         padding-top: 20vw;
     }
