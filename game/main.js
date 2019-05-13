@@ -253,9 +253,16 @@ function stopGame() {
     document.querySelectorAll(".item").forEach(element => {
       document.body.removeChild(element);
     });
+    saveUserScoreToLocalStorage();
     score.resetScore();
     gameStarted = false;
   }
+}
+
+function saveUserScoreToLocalStorage(){
+  localStorage.setItem("userEmail", emailInput.value);
+  localStorage.setItem("userScore", score.score);
+  localStorage.setItem("userFirstName", nameInput.value);
 }
 
 let nameContainer = document.getElementById("game__name");
