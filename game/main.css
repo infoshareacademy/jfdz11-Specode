@@ -195,6 +195,7 @@ input {
     color: black;
     float: right;
     box-shadow: 0 3px 3px 3px rgba(0, 255, 64, 0.2);
+    width: 40%;
 }
 
 .close__container {
