@@ -160,7 +160,7 @@ let gameInterval = setTimeout(function game() {
   moveChickenRAF_ID = requestAnimationFrame(loop);
 
   if (timer.time >= 2) {
-    timeOfShowNewElement = timeOfShowNewElement * 0.99;
+    timeOfShowNewElement = timeOfShowNewElement * 0.97;
   }
   gameInterval = setTimeout(game, timeOfShowNewElement);
 }, timeOfShowNewElement);
@@ -180,8 +180,8 @@ class Catcher {
   moveLeft() {
     if (pause === true) {
       return;
-    } else if (this.positionX - 25 > 0) {
-      this.positionX -= 25;
+    } else if (this.positionX - 75 > 0) {
+      this.positionX -= 75;
       this.element.style.left = this.positionX + "px";
     }
   }
@@ -189,13 +189,20 @@ class Catcher {
   moveRight() {
     if (pause === true) {
       return;
-    } else if (this.positionX + this.width + 25 < window.innerWidth) {
-      this.positionX += 25;
+    } else if (this.positionX + this.width + 75 < window.innerWidth) {
+      this.positionX += 75;
       this.element.style.left = this.positionX + "px";
     }
   }
 }
 const catcher = new Catcher(document.getElementById("catcher"));
+
+
+
+
+
+
+
 
 window.addEventListener("keydown", event => {
   if (event.keyCode === 37) {
@@ -204,6 +211,17 @@ window.addEventListener("keydown", event => {
     catcher.moveRight();
   }
 });
+
+
+
+
+
+
+
+
+
+
+
 
 const clickPause = document.getElementById("pause");
 
@@ -245,7 +263,7 @@ function resetGame() {
 }
 
 function stopGame() {
-  if (timer.time >= 25) {
+  if (timer.time >= 30) {
     pause = true;
     timer.stop();
     timer.reset();
