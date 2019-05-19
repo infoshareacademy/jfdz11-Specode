@@ -79,7 +79,7 @@ function getRandomObject() {
 }
 
 function getRandomOfFallingObject() {
-  return Math.round(Math.random() * positionOfFallingObject.length - 1);
+  return Math.round(Math.random() * positionOfFallingObject.length - 1) + 1;
 }
 
 let gameInterval = setTimeout(function game() {
@@ -180,8 +180,8 @@ class Catcher {
   moveLeft() {
     if (pause === true) {
       return;
-    } else if (this.positionX - 25 > 0) {
-      this.positionX -= 25;
+    } else if (this.positionX - 75 > 0) {
+      this.positionX -= 75;
       this.element.style.left = this.positionX + "px";
     }
   }
@@ -189,8 +189,8 @@ class Catcher {
   moveRight() {
     if (pause === true) {
       return;
-    } else if (this.positionX + this.width + 25 < window.innerWidth) {
-      this.positionX += 25;
+    } else if (this.positionX + this.width + 75 < window.innerWidth) {
+      this.positionX += 75;
       this.element.style.left = this.positionX + "px";
     }
   }
