@@ -153,12 +153,12 @@ var leader1 = document.getElementById("leader-1");
 var leader2 = document.getElementById("leader-2");
 var leader3 = document.getElementById("leader-3");
 
-function showAboutLeader(){
+function showAboutLeader1(){
       leadershippopups.classList.add("active");
       leader1.classList.add('active');
 }
 
-function closeDescriptionTab(){
+function closeDescriptionTab1(){
   leadershippopups.classList.remove("active");
   leader1.classList.remove('active'); 
 }
