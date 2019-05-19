@@ -180,8 +180,8 @@ class Catcher {
   moveLeft() {
     if (pause === true) {
       return;
-    } else if (this.positionX - 75 > 0) {
-      this.positionX -= 75;
+    } else if (this.positionX - 60 > 0) {
+      this.positionX -= 60;
       this.element.style.left = this.positionX + "px";
     }
   }
@@ -189,8 +189,8 @@ class Catcher {
   moveRight() {
     if (pause === true) {
       return;
-    } else if (this.positionX + this.width + 75 < window.innerWidth) {
-      this.positionX += 75;
+    } else if (this.positionX + this.width + 60 < window.innerWidth) {
+      this.positionX += 60;
       this.element.style.left = this.positionX + "px";
     }
   }
