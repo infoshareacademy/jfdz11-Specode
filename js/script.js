@@ -147,3 +147,39 @@ function changeMenuColor() {
       }
       }
     }
+
+var leadershippopups = document.getElementById("leadership-popups");
+var leader1 = document.getElementById("leader-1");
+var leader2 = document.getElementById("leader-2");
+var leader3 = document.getElementById("leader-3");
+
+function showAboutLeader(){
+      leadershippopups.classList.add("active");
+      leader1.classList.add('active');
+}
+
+function closeDescriptionTab(){
+  leadershippopups.classList.remove("active");
+  leader1.classList.remove('active'); 
+}
+    
+function showAboutLeader2(){
+  leadershippopups.classList.add("active");
+  leader2.classList.add('active');
+}
+
+function closeDescriptionTab2(){
+  leadershippopups.classList.remove("active");
+  leader2.classList.remove('active'); 
+}
+    
+function showAboutLeader3(){
+  leadershippopups.classList.add("active");
+  leader3.classList.add('active');
+
+}
+
+function closeDescriptionTab3(){
+  leadershippopups.classList.remove("active");
+  leader3.classList.remove('active'); 
+}

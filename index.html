@@ -31,8 +31,8 @@
                     <li class="logo"><a href="#navHero"><img src="photos/logo-99.png" alt="logo"></a></li>
                     <li><a href="#navFunction">Czym sie zajmujemy</a></li>
                     <li><a href="#form">Zapis na premierę</a></li>
-                    <li><a href="#about_us_header">Informacje o zespole</a></li>
-                    <li id="go__game"><a href="game/index.html">Zagraj w naszą grę</a></li>
+                    <li><a href="#about_us">Informacje o zespole</a></li>
+                    <li id="go__game"><a href="/game/index.html">Zagraj w naszą grę</a></li>
                 </ul>
             </div>
         </div>
@@ -206,7 +206,7 @@
 ------------------ another section 
 --- another section 
 -->
-<div class="row about_us_header" id="about_us_header">
+<div class="row about_us_header">
         <h2>Meet our team</h2>
     </div>
 
@@ -221,7 +221,7 @@
                                     
                                         <li>
                                             <article>
-                                                <a class="leader" href="#leader-1">
+                                                <a class="leader" href="#leader-1" onclick="showAboutLeader()">
                                                     <aside class=""></aside>
                                                     <header>
                                                         <div class="title">
@@ -258,7 +258,7 @@
                                     
                                         <li>
                                             <article>
-                                                <a class="leader" href="#leader-2">
+                                                <a class="leader" href="#leader-2" onclick="showAboutLeader2()">
                                                     <aside class="two-right "></aside>
                                                     <header>
                                                         <div class="title">
@@ -295,7 +295,7 @@
                                     
                                         <li>
                                             <article>
-                                                <a class="leader" href="#leader-3">
+                                                <a class="leader" href="#leader-3" onclick="showAboutLeader3()">
                                                     <aside class="three-right "></aside>
                                                     <header>
                                                         <div class="title">
@@ -365,7 +365,7 @@
                                                     </ul>
                                                 </div>
                                             
-                                            <a class="close" href="#">
+                                            <a class="close" onclick="closeDescriptionTab()">
                                                 <div class="circle"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
             <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
@@ -406,7 +406,7 @@
                                                             Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony, kiedy ten chce zobaczyć sam jej wygląd. Jedną z mocnych stron używania Lorem Ipsum jest to, że ma wiele różnych „kombinacji” zdań, słów i akapitów, w przeciwieństwie do zwykłego: „tekst, tekst, tekst”, sprawiającego, że wygląda to „zbyt czytelnie” po polsku. Wielu webmasterów i designerów używa Lorem Ipsum jako domyślnego modelu tekstu i wpisanie w internetowej wyszukiwarce ‘lorem ipsum’ spowoduje znalezienie bardzo wielu stron, które wciąż są w budowie. Wiele wersji tekstu ewoluowało i zmieniało się przez lata, czasem przez przypadek, czasem specjalnie (humorystyczne wstawki itd).</p>
                                                 </div>
                                             </div>
-                                            <a class="close" href="#">
+                                            <a class="close" onclick="closeDescriptionTab()">
                                                 <div class="circle"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
             <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
@@ -435,7 +435,7 @@
                                                 </picture>
                                             </div>
                                             
-                                            <a class="close" href="#">
+                                            <a class="close" onclick="closeDescriptionTab2()">
                                                 <div class="circle"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
             <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
@@ -476,7 +476,7 @@
                                                             Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony, kiedy ten chce zobaczyć sam jej wygląd. Jedną z mocnych stron używania Lorem Ipsum jest to, że ma wiele różnych „kombinacji” zdań, słów i akapitów, w przeciwieństwie do zwykłego: „tekst, tekst, tekst”, sprawiającego, że wygląda to „zbyt czytelnie” po polsku. Wielu webmasterów i designerów używa Lorem Ipsum jako domyślnego modelu tekstu i wpisanie w internetowej wyszukiwarce ‘lorem ipsum’ spowoduje znalezienie bardzo wielu stron, które wciąż są w budowie. Wiele wersji tekstu ewoluowało i zmieniało się przez lata, czasem przez przypadek, czasem specjalnie (humorystyczne wstawki itd).</p>
                                                 </div>
                                             </div>
-                                            <a class="close" href="#">
+                                            <a class="close" onclick="closeDescriptionTab2()">
                                                 <div class="circle"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
             <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
@@ -546,7 +546,7 @@
                                                             Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony, kiedy ten chce zobaczyć sam jej wygląd. Jedną z mocnych stron używania Lorem Ipsum jest to, że ma wiele różnych „kombinacji” zdań, słów i akapitów, w przeciwieństwie do zwykłego: „tekst, tekst, tekst”, sprawiającego, że wygląda to „zbyt czytelnie” po polsku. Wielu webmasterów i designerów używa Lorem Ipsum jako domyślnego modelu tekstu i wpisanie w internetowej wyszukiwarce ‘lorem ipsum’ spowoduje znalezienie bardzo wielu stron, które wciąż są w budowie. Wiele wersji tekstu ewoluowało i zmieniało się przez lata, czasem przez przypadek, czasem specjalnie (humorystyczne wstawki itd).</p>
                                                 </div>
                                             </div>
-                                            <a class="close" href="#">
+                                            <a class="close" onclick="closeDescriptionTab3()">
                                                 <div class="circle"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
             <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
