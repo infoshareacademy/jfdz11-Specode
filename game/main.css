@@ -313,6 +313,7 @@ input {
 
     .pauseButton {
         font-size: 1.2rem;
+        height: 100px;
     }
 
     .pauseButton input {
